@@ -17,6 +17,9 @@
 		C77B8E8D20E3C4C6007AA5AD /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8E8A20E3C489007AA5AD /* ResearchKit.framework */; };
 		C77B8E8E20E3C4C6007AA5AD /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8E8A20E3C489007AA5AD /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C77B8E9520E3C5DD007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */; };
+		C77B8E9820E3C7D2007AA5AD /* IntroSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9720E3C7D2007AA5AD /* IntroSegue.swift */; };
+		C77B8E9A20E3C84F007AA5AD /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */; };
+		C77B8E9C20E3C99E007AA5AD /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		C77B8E7720E3C47B007AA5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
+		C77B8E9720E3C7D2007AA5AD /* IntroSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSegue.swift; sourceTree = "<group>"; };
+		C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
+		C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +145,7 @@
 		C77B8E5420E3C47B007AA5AD /* AppleWatchHeartRateCollection */ = {
 			isa = PBXGroup;
 			children = (
-				C77B8E5720E3C47B007AA5AD /* IntroViewController.swift */,
+				C77B8E9620E3C7BE007AA5AD /* Intro */,
 				C77B8E9220E3C4E4007AA5AD /* Consent */,
 				C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */,
 				C77B8E5920E3C47B007AA5AD /* Main.storyboard */,
@@ -181,8 +187,19 @@
 			isa = PBXGroup;
 			children = (
 				C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */,
+				C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */,
+				C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */,
 			);
 			path = Consent;
+			sourceTree = "<group>";
+		};
+		C77B8E9620E3C7BE007AA5AD /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				C77B8E5720E3C47B007AA5AD /* IntroViewController.swift */,
+				C77B8E9720E3C7D2007AA5AD /* IntroSegue.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,9 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77B8E9820E3C7D2007AA5AD /* IntroSegue.swift in Sources */,
 				C77B8E5820E3C47B007AA5AD /* IntroViewController.swift in Sources */,
 				C77B8E9520E3C5DD007AA5AD /* ConsentViewController.swift in Sources */,
+				C77B8E9C20E3C99E007AA5AD /* ConsentTask.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
+				C77B8E9A20E3C84F007AA5AD /* ConsentDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

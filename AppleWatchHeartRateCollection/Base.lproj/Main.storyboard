@@ -20,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="XbB-AW-lva" kind="show" id="mX4-7S-tDL"/>
+                        <segue destination="XbB-AW-lva" kind="custom" identifier="toConsent" customClass="IntroSegue" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" id="mX4-7S-tDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -45,7 +45,7 @@
         <!--ConsentViewController-->
         <scene sceneID="BIG-3m-H1P">
             <objects>
-                <viewController title="ConsentViewController" id="XbB-AW-lva" sceneMemberID="viewController">
+                <viewController title="ConsentViewController" id="XbB-AW-lva" customClass="ConsentViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nn8-11-asJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,9 @@
                                 <rect key="frame" x="139" y="431" width="96" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Join Study"/>
+                                <connections>
+                                    <action selector="joinButtonTapped:" destination="XbB-AW-lva" eventType="touchUpInside" id="4WC-5G-Z6R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

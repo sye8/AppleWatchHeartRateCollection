@@ -12,7 +12,7 @@ class IntroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        toConsent()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +20,9 @@ class IntroViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func toConsent(){
+        performSegue(withIdentifier: "toConsent", sender: self)
+    }
 
 }
 
