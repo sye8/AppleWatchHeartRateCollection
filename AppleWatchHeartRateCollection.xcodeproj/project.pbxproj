@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */; };
+		C732646520E3DD8E00C83CA2 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732646320E3DD8E00C83CA2 /* ConsentTask.swift */; };
+		C732647320E3DE5400C83CA2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732647220E3DE5400C83CA2 /* HealthKit.framework */; };
+		C732647420E3DE5F00C83CA2 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; };
+		C732647520E3DE5F00C83CA2 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
 		C77B8E5820E3C47B007AA5AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
@@ -17,6 +22,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C732646C20E3DE4C00C83CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		C732646E20E3DE4C00C83CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		C732647620E3DE5F00C83CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 		C77B8E6720E3C47B007AA5AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C77B8E4A20E3C47B007AA5AD /* Project object */;
@@ -33,7 +59,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C732647820E3DE5F00C83CA2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C732647520E3DE5F00C83CA2 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
+		C732646320E3DD8E00C83CA2 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
+		C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppleWatchHeartRateCollection.entitlements; sourceTree = "<group>"; };
+		C732647220E3DE5400C83CA2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77B8E5720E3C47B007AA5AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C732647420E3DE5F00C83CA2 /* ResearchKit.framework in Frameworks */,
+				C732647320E3DE5400C83CA2 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +121,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C732646120E3DD6B00C83CA2 /* Consent */ = {
+			isa = PBXGroup;
+			children = (
+				C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */,
+				C732646320E3DD8E00C83CA2 /* ConsentTask.swift */,
+			);
+			path = Consent;
+			sourceTree = "<group>";
+		};
+		C732646720E3DE4B00C83CA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */,
+				C732646F20E3DE4C00C83CA2 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C732647120E3DE5400C83CA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C732647220E3DE5400C83CA2 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C77B8E4920E3C47B007AA5AD = {
 			isa = PBXGroup;
 			children = (
+				C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */,
 				C77B8E5420E3C47B007AA5AD /* AppleWatchHeartRateCollection */,
 				C77B8E6920E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests */,
 				C77B8E7420E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests */,
 				C77B8E5320E3C47B007AA5AD /* Products */,
+				C732647120E3DE5400C83CA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +172,8 @@
 		C77B8E5420E3C47B007AA5AD /* AppleWatchHeartRateCollection */ = {
 			isa = PBXGroup;
 			children = (
+				C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */,
+				C732646120E3DD6B00C83CA2 /* Consent */,
 				C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */,
 				C77B8E5720E3C47B007AA5AD /* ViewController.swift */,
 				C77B8E5920E3C47B007AA5AD /* Main.storyboard */,
@@ -135,10 +212,12 @@
 				C77B8E4E20E3C47B007AA5AD /* Sources */,
 				C77B8E4F20E3C47B007AA5AD /* Frameworks */,
 				C77B8E5020E3C47B007AA5AD /* Resources */,
+				C732647820E3DE5F00C83CA2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C732647720E3DE5F00C83CA2 /* PBXTargetDependency */,
 			);
 			name = AppleWatchHeartRateCollection;
 			productName = AppleWatchHeartRateCollection;
@@ -194,6 +273,11 @@
 					C77B8E5120E3C47B007AA5AD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					C77B8E6520E3C47B007AA5AD = {
 						CreatedOnToolsVersion = 9.2;
@@ -218,6 +302,12 @@
 			mainGroup = C77B8E4920E3C47B007AA5AD;
 			productRefGroup = C77B8E5320E3C47B007AA5AD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C732646720E3DE4B00C83CA2 /* Products */;
+					ProjectRef = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C77B8E5120E3C47B007AA5AD /* AppleWatchHeartRateCollection */,
@@ -226,6 +316,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = C732646C20E3DE4C00C83CA2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C732646F20E3DE4C00C83CA2 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = C732646E20E3DE4C00C83CA2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C77B8E5020E3C47B007AA5AD /* Resources */ = {
@@ -260,6 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77B8E5820E3C47B007AA5AD /* ViewController.swift in Sources */,
+				C732646520E3DD8E00C83CA2 /* ConsentTask.swift in Sources */,
+				C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +392,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C732647720E3DE5F00C83CA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = C732647620E3DE5F00C83CA2 /* PBXContainerItemProxy */;
+		};
 		C77B8E6820E3C47B007AA5AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C77B8E5120E3C47B007AA5AD /* AppleWatchHeartRateCollection */;
@@ -425,7 +539,9 @@
 		C77B8E7B20E3C47B007AA5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppleWatchHeartRateCollection/AppleWatchHeartRateCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JM5BU57S6W;
 				INFOPLIST_FILE = AppleWatchHeartRateCollection/Info.plist;
@@ -440,7 +556,9 @@
 		C77B8E7C20E3C47B007AA5AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppleWatchHeartRateCollection/AppleWatchHeartRateCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JM5BU57S6W;
 				INFOPLIST_FILE = AppleWatchHeartRateCollection/Info.plist;
