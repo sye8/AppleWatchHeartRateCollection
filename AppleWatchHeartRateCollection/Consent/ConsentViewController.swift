@@ -38,4 +38,12 @@ extension ViewController : ORKTaskViewControllerDelegate {
         taskViewController.dismiss(animated: true, completion: nil)
     }
     
+    func taskViewController(_ taskViewController: ORKTaskViewController, viewControllerFor step: ORKStep) -> ORKStepViewController? {
+        if step is HealthDataStep {
+            let healthStepViewController = HealthDataStepViewController(step: step)
+            return healthStepViewController
+        }
+        return nil
+    }
+    
 }

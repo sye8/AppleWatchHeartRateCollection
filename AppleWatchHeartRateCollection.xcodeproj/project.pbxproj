@@ -14,6 +14,8 @@
 		C732647520E3DE5F00C83CA2 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647A20E3E15300C83CA2 /* IntroViewController.swift */; };
 		C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */; };
+		C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647E20E3E36600C83CA2 /* HealthDataAuthStep.swift */; };
+		C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732648220E3E63500C83CA2 /* HealthDataAuthStepViewController.swift */; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
 		C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
@@ -83,6 +85,8 @@
 		C732647220E3DE5400C83CA2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		C732647A20E3E15300C83CA2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSegue.swift; sourceTree = "<group>"; };
+		C732647E20E3E36600C83CA2 /* HealthDataAuthStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataAuthStep.swift; sourceTree = "<group>"; };
+		C732648220E3E63500C83CA2 /* HealthDataAuthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataAuthStepViewController.swift; sourceTree = "<group>"; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */,
 				C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */,
 				C732646320E3DD8E00C83CA2 /* ConsentTask.swift */,
+				C732647E20E3E36600C83CA2 /* HealthDataAuthStep.swift */,
+				C732648220E3E63500C83CA2 /* HealthDataAuthStepViewController.swift */,
 			);
 			path = Consent;
 			sourceTree = "<group>";
@@ -386,6 +392,8 @@
 				C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */,
 				C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
+				C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */,
+				C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

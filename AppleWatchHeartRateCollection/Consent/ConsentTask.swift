@@ -8,6 +8,7 @@
 
 import ResearchKit
 
+
 public var ConsentTask: ORKOrderedTask {
     
     var steps = [ORKStep]()
@@ -16,6 +17,10 @@ public var ConsentTask: ORKOrderedTask {
     let consentDocument = ConsentDocument
     let visualConsentStep = ORKVisualConsentStep(identifier: "VisualConsentStep", document: consentDocument)
     steps += [visualConsentStep]
+    
+    //Request Health Data
+    let healthDataStep = HealthDataStep(identifier: "Health")
+    steps += [healthDataStep]
     
     //Review & Sign
     let signature = consentDocument.signatures!.first!
