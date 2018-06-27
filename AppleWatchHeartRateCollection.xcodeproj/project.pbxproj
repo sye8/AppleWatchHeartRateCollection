@@ -12,8 +12,10 @@
 		C732647320E3DE5400C83CA2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732647220E3DE5400C83CA2 /* HealthKit.framework */; };
 		C732647420E3DE5F00C83CA2 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; };
 		C732647520E3DE5F00C83CA2 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647A20E3E15300C83CA2 /* IntroViewController.swift */; };
+		C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
-		C77B8E5820E3C47B007AA5AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ViewController.swift */; };
+		C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
 		C77B8E5D20E3C47B007AA5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */; };
 		C77B8E6020E3C47B007AA5AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5E20E3C47B007AA5AD /* LaunchScreen.storyboard */; };
@@ -79,9 +81,11 @@
 		C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppleWatchHeartRateCollection.entitlements; sourceTree = "<group>"; };
 		C732647220E3DE5400C83CA2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		C732647A20E3E15300C83CA2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSegue.swift; sourceTree = "<group>"; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C77B8E5720E3C47B007AA5AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
 		C77B8E5A20E3C47B007AA5AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C77B8E5F20E3C47B007AA5AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		C732646120E3DD6B00C83CA2 /* Consent */ = {
 			isa = PBXGroup;
 			children = (
+				C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */,
 				C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */,
 				C732646320E3DD8E00C83CA2 /* ConsentTask.swift */,
 			);
@@ -145,6 +150,15 @@
 				C732647220E3DE5400C83CA2 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C732647920E3E14400C83CA2 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				C732647A20E3E15300C83CA2 /* IntroViewController.swift */,
+				C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		C77B8E4920E3C47B007AA5AD = {
@@ -173,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */,
+				C732647920E3E14400C83CA2 /* Intro */,
 				C732646120E3DD6B00C83CA2 /* Consent */,
 				C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */,
-				C77B8E5720E3C47B007AA5AD /* ViewController.swift */,
 				C77B8E5920E3C47B007AA5AD /* Main.storyboard */,
 				C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */,
 				C77B8E5E20E3C47B007AA5AD /* LaunchScreen.storyboard */,
@@ -366,9 +380,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77B8E5820E3C47B007AA5AD /* ViewController.swift in Sources */,
+				C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */,
+				C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */,
 				C732646520E3DD8E00C83CA2 /* ConsentTask.swift in Sources */,
 				C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */,
+				C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
