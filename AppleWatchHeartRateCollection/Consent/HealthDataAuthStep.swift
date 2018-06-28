@@ -52,7 +52,7 @@ class HealthDataStep: ORKInstructionStep {
         super.init(identifier: identifier)
         
         title = NSLocalizedString("Health Data", comment: "")
-        text = NSLocalizedString("On the next screen, you will be prompted to grant access to read your heart rate data for this study.", comment: "")
+        text = NSLocalizedString("On the next screen, you will be prompted to grant access to read your heart rate data for this study.\n\nIf you have declined authorization before and wish to grant access, head to\n\n Settings -> Privacy -> Health\n\nto authorize.", comment: "")
     }
     
     required init(coder aDecoder: NSCoder) {

@@ -8,12 +8,18 @@
 
 import UIKit
 
+import ResearchKit
+
 class IntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        toConsent()
+        //Branch off into different views
+        if ORKPasscodeViewController.isPasscodeStoredInKeychain(){
+            toTasks()
+        }else{
+            toConsent()
+        }
     }
     
     
@@ -25,5 +31,9 @@ class IntroViewController: UIViewController {
     
     func toConsent(){
         performSegue(withIdentifier: "toConsent", sender: self)
+    }
+    
+    func toTasks(){
+        performSegue(withIdentifier: "toTasks", sender: self)
     }
 }
