@@ -19,6 +19,7 @@
 		C742F84420E4E7350028A123 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F84320E4E7350028A123 /* TasksViewController.swift */; };
 		C742F84920E508D70028A123 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F84820E508D70028A123 /* MenuViewController.swift */; };
 		C742F85420E525DF0028A123 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F85320E525DF0028A123 /* SurveyTask.swift */; };
+		C742F86220E53C360028A123 /* HeartRateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F86120E53C360028A123 /* HeartRateTask.swift */; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
 		C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		C742F84320E4E7350028A123 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C742F84820E508D70028A123 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C742F85320E525DF0028A123 /* SurveyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
+		C742F86120E53C360028A123 /* HeartRateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTask.swift; sourceTree = "<group>"; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				C742F84320E4E7350028A123 /* TasksViewController.swift */,
 				C742F85320E525DF0028A123 /* SurveyTask.swift */,
+				C742F86120E53C360028A123 /* HeartRateTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */,
+				C742F86220E53C360028A123 /* HeartRateTask.swift in Sources */,
 				C742F85420E525DF0028A123 /* SurveyTask.swift in Sources */,
 				C742F84920E508D70028A123 /* MenuViewController.swift in Sources */,
 				C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */,
