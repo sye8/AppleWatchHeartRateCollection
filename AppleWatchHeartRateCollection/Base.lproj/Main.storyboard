@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="386" y="41"/>
         </scene>
-        <!--About-->
+        <!--Menu-->
         <scene sceneID="gHx-xW-CKA">
             <objects>
                 <viewController id="81z-e2-JjQ" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="heart-fitness" id="FBh-2v-EhG"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menu" id="FBh-2v-EhG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnc-mk-0sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,7 +145,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart-fitness" width="15" height="13"/>
+        <image name="menu" width="30" height="30"/>
         <image name="tab_activities" width="23" height="23"/>
     </resources>
 </document>
