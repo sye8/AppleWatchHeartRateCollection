@@ -31,7 +31,7 @@
         <!--Consent View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Consent View Controller" id="BYZ-38-t0r" customClass="ConsentViewController" sceneMemberID="viewController">
+                <viewController title="Consent View Controller" id="BYZ-38-t0r" customClass="ConsentViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <state key="normal" title="Join Study"/>
                                 <connections>
-                                    <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGB-17-h9j"/>
+                                    <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxk-pY-gGq"/>
                                 </connections>
                             </button>
                         </subviews>
