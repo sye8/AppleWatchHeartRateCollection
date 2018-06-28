@@ -42,6 +42,6 @@ import ResearchKit
  short walking and rest durations of 20 seconds each are used, whereas more
  realistic durations might be several minutes each.
 */
-private var FitnessTask: ORKTask {
-    return ORKOrderedTask.fitnessCheck(withIdentifier: String(describing:Identifier.fitnessTask), intendedUseDescription: exampleDescription, walkDuration: 20, restDuration: 20, options: [])
+public var FitnessTask: ORKTask {
+    return ORKOrderedTask.fitnessCheck(withIdentifier: "FitnessTaks", intendedUseDescription: "<Description>", walkDuration: 20, restDuration: 20, options: [])
 }
