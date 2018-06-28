@@ -1,6 +1,6 @@
 //
 //  ConsentDocument.swift
-//  ResearchKitTutorial
+//  AppleWatchHeartRateCollection
 //
 //  Created by 叶思帆 on 27/06/2018.
 //  Copyright © 2018 Sifan Ye. All rights reserved.
@@ -13,7 +13,6 @@ public var ConsentDocument: ORKConsentDocument {
     let consentDocument = ORKConsentDocument()
     consentDocument.title = "Research Study Consent Form"
     
-    //TODO: consent sections
     let sectionTypes: [ORKConsentSectionType] = [
         .overview,
         .dataGathering,
@@ -54,11 +53,7 @@ public var ConsentDocument: ORKConsentDocument {
         }
     }
     
-    
-    
-    //TODO: signature
     consentDocument.addSignature(ORKConsentSignature(forPersonWithTitle: nil, dateFormatString: nil, identifier: "ConsentDocumentParticipantSignature"))
-    
-    
+        
     return consentDocument
 }

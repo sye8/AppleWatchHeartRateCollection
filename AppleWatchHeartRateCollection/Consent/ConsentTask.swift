@@ -1,13 +1,12 @@
 //
 //  ConsentTask.swift
-//  ResearchKitTutorial
+//  AppleWatchHeartRateCollection
 //
 //  Created by 叶思帆 on 27/06/2018.
 //  Copyright © 2018 Sifan Ye. All rights reserved.
 //
 
 import ResearchKit
-
 
 public var ConsentTask: ORKOrderedTask {
     
@@ -28,6 +27,11 @@ public var ConsentTask: ORKOrderedTask {
     reviewConsentStep.text = "Review the consent form."
     reviewConsentStep.reasonForConsent = "Consent to join study"
     steps += [reviewConsentStep]
+    
+    //Passcode/TouchID Protection
+    let passcodeStep = ORKPasscodeStep(identifier: "Passcode")
+    passcodeStep.text = "Now you will create a passcode to identify yourself to the app and protect access to information you've entered."
+    steps += [passcodeStep]
     
     //Completion
     let completionStep = ORKCompletionStep(identifier: "CompletionStep")
