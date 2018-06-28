@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +31,7 @@
         <!--Consent View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Consent View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Consent View Controller" id="BYZ-38-t0r" customClass="ConsentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <state key="normal" title="Join Study"/>
                                 <connections>
-                                    <action selector="consentTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A2q-zj-9n4"/>
+                                    <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGB-17-h9j"/>
                                 </connections>
                             </button>
                         </subviews>

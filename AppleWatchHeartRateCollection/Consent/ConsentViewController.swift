@@ -28,7 +28,7 @@ class ConsentViewController: UIViewController {
     
 }
 
-extension ViewController : ORKTaskViewControllerDelegate {
+extension ConsentViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         //Handle results with taskViewController.result

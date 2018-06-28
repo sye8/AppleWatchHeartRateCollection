@@ -104,9 +104,6 @@
 		C77B8E7120E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWatchHeartRateCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchHeartRateCollectionUITests.swift; sourceTree = "<group>"; };
 		C77B8E7720E3C47B007AA5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
-		C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
-		C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +218,6 @@
 				C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */,
 				C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */,
 				C77B8E6120E3C47B007AA5AD /* Info.plist */,
-				C77B8E9220E3C4E4007AA5AD /* Consent */,
 				C732647920E3E14400C83CA2 /* Intro */,
 				C732646120E3DD6B00C83CA2 /* Consent */,
 				C742F84520E508540028A123 /* Menu */,
@@ -246,16 +242,6 @@
 				C77B8E7720E3C47B007AA5AD /* Info.plist */,
 			);
 			path = AppleWatchHeartRateCollectionUITests;
-			sourceTree = "<group>";
-		};
-		C77B8E9220E3C4E4007AA5AD /* Consent */ = {
-			isa = PBXGroup;
-			children = (
-				C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */,
-				C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */,
-				C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */,
-			);
-			path = Consent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
