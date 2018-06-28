@@ -12,6 +12,13 @@ import ResearchKit
 
 class IntroViewController: UIViewController {
     
+    var contentHidden = false {
+        didSet {
+            guard contentHidden != oldValue && isViewLoaded else { return }
+            childViewControllers.first?.view.isHidden = contentHidden
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Branch off into different views

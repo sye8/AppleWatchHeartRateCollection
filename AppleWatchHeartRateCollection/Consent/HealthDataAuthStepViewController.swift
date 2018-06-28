@@ -2,7 +2,7 @@
 //  HealthDataAuthStepViewController.swift
 //  AppleWatchHeartRateCollection
 //
-//  Code from ORKSample/HealthDataStepViewController
+//  Code from ORKSample/Steps/HealthDataStepViewController
 //  Original Copyright Document:
 /*
  Copyright (c) 2015, Apple Inc. All rights reserved.
