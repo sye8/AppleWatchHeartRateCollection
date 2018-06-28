@@ -78,14 +78,29 @@
             </objects>
             <point key="canvasLocation" x="386" y="41"/>
         </scene>
-        <!--Menu-->
+        <!--Menu View Controller-->
         <scene sceneID="gHx-xW-CKA">
             <objects>
-                <viewController id="81z-e2-JjQ" sceneMemberID="viewController">
+                <viewController title="Menu View Controller" id="81z-e2-JjQ" customClass="MenuViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wbo-Tv-vjr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="til-ZS-mny">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTappedWithSender:" destination="81z-e2-JjQ" eventType="touchUpInside" id="TaO-Xi-CiJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerY" secondItem="wbo-Tv-vjr" secondAttribute="centerY" id="Rdg-ce-Bb2"/>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerX" secondItem="wbo-Tv-vjr" secondAttribute="centerX" id="tcD-ob-dOF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="menu" id="FBh-2v-EhG"/>
@@ -101,22 +116,7 @@
                     <view key="view" contentMode="scaleToFill" id="06g-4o-Imi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="til-ZS-mny">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTappedWithSender:" destination="hbb-JY-t1K" eventType="touchUpInside" id="iRN-b8-eK6"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="til-ZS-mny" firstAttribute="centerX" secondItem="06g-4o-Imi" secondAttribute="centerX" id="Dwr-I6-QQs"/>
-                            <constraint firstItem="til-ZS-mny" firstAttribute="centerY" secondItem="06g-4o-Imi" secondAttribute="centerY" id="Fwh-ad-wlc"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XSJ-UQ-5C5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="tab_activities" id="nDv-IL-PSH"/>
