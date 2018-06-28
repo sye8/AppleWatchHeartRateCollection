@@ -1,8 +1,8 @@
 //
-//  IntroSegue.swift
+//  HealthDataAuth.swift
 //  AppleWatchHeartRateCollection
 //
-//  Code from ORKSample/ResearchContainerSeague
+//  Code from ORKSample/Steps/HealthDataStep
 //  Original Copyright Document:
 /*
  Copyright (c) 2015, Apple Inc. All rights reserved.
@@ -34,26 +34,34 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 //
+//  Modified by 叶思帆 on 27/06/2018.
+//  Copyright © 2018 Sifan Ye. All rights reserved.
+//
 
-import UIKit
+import ResearchKit
+import HealthKit
 
-class IntroSegue: UIStoryboardSegue {
+class HealthDataStep: ORKInstructionStep {
     
-    override func perform() {
-        let controllerToReplace = source.childViewControllers.first
-        let destinationControllerView = destination.view
+    let healthKitStore = HKHealthStore()
+    
+    let healthDataItemsToRead: Set<HKObjectType> = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+    let healthDataItemsToWrite: Set<HKSampleType> = []
+    
+    override init(identifier: String) {
+        super.init(identifier: identifier)
         
-        destinationControllerView?.translatesAutoresizingMaskIntoConstraints = true
-        destinationControllerView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        destinationControllerView?.frame = source.view.bounds
-        
-        controllerToReplace?.willMove(toParentViewController: nil)
-        source.addChildViewController(destination)
-        
-        source.view.addSubview(destinationControllerView!)
-        controllerToReplace?.view.removeFromSuperview()
-        
-        destination.didMove(toParentViewController: source)
-        controllerToReplace?.removeFromParentViewController()
+        title = NSLocalizedString("Health Data", comment: "")
+        text = NSLocalizedString("On the next screen, you will be prompted to grant access to read your heart rate data for this study.\n\nIf you have declined authorization before and wish to grant access, head to\n\n Settings -> Privacy -> Health\n\nto authorize.", comment: "")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func getHealthAuthorization(_ completion: @escaping (_ success: Bool, _ error: NSError?) -> Void) {
+        HKHealthStore().requestAuthorization(toShare: healthDataItemsToWrite, read: healthDataItemsToRead){ (success, error) -> Void in
+            completion(success, error as NSError?)
+        }
     }
 }

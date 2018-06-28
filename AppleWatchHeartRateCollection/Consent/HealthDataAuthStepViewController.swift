@@ -1,8 +1,8 @@
 //
-//  IntroSegue.swift
+//  HealthDataAuthStepViewController.swift
 //  AppleWatchHeartRateCollection
 //
-//  Code from ORKSample/ResearchContainerSeague
+//  Code from ORKSample/Steps/HealthDataStepViewController
 //  Original Copyright Document:
 /*
  Copyright (c) 2015, Apple Inc. All rights reserved.
@@ -34,26 +34,27 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 //
+//  Modified by 叶思帆 on 27/06/2018.
+//  Copyright © 2018 Sifan Ye. All rights reserved.
+//
 
-import UIKit
+import ResearchKit
+import HealthKit
 
-class IntroSegue: UIStoryboardSegue {
+class HealthDataStepViewController: ORKInstructionStepViewController {
     
-    override func perform() {
-        let controllerToReplace = source.childViewControllers.first
-        let destinationControllerView = destination.view
-        
-        destinationControllerView?.translatesAutoresizingMaskIntoConstraints = true
-        destinationControllerView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        destinationControllerView?.frame = source.view.bounds
-        
-        controllerToReplace?.willMove(toParentViewController: nil)
-        source.addChildViewController(destination)
-        
-        source.view.addSubview(destinationControllerView!)
-        controllerToReplace?.view.removeFromSuperview()
-        
-        destination.didMove(toParentViewController: source)
-        controllerToReplace?.removeFromParentViewController()
+    var healthDataStep: HealthDataStep? {
+        return step as? HealthDataStep
     }
+    
+    override func goForward() {
+        healthDataStep?.getHealthAuthorization(){succeeded, _ in
+            guard succeeded || (TARGET_OS_SIMULATOR != 0) else { return }
+            OperationQueue.main.addOperation {
+                super.goForward()
+            }
+        }
+    }
+    
 }
+

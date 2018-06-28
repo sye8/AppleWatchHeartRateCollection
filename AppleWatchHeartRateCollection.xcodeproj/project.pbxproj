@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */; };
+		C732646520E3DD8E00C83CA2 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732646320E3DD8E00C83CA2 /* ConsentTask.swift */; };
+		C732647320E3DE5400C83CA2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732647220E3DE5400C83CA2 /* HealthKit.framework */; };
+		C732647420E3DE5F00C83CA2 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; };
+		C732647520E3DE5F00C83CA2 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647A20E3E15300C83CA2 /* IntroViewController.swift */; };
+		C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */; };
+		C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732647E20E3E36600C83CA2 /* HealthDataAuthStep.swift */; };
+		C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732648220E3E63500C83CA2 /* HealthDataAuthStepViewController.swift */; };
+		C742F84420E4E7350028A123 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F84320E4E7350028A123 /* TasksViewController.swift */; };
+		C742F84920E508D70028A123 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F84820E508D70028A123 /* MenuViewController.swift */; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
-		C77B8E5820E3C47B007AA5AD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* IntroViewController.swift */; };
+		C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
 		C77B8E5D20E3C47B007AA5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */; };
 		C77B8E6020E3C47B007AA5AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5E20E3C47B007AA5AD /* LaunchScreen.storyboard */; };
@@ -23,6 +34,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C732646C20E3DE4C00C83CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		C732646E20E3DE4C00C83CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		C732647620E3DE5F00C83CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 		C77B8E6720E3C47B007AA5AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C77B8E4A20E3C47B007AA5AD /* Project object */;
@@ -61,13 +93,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C77B8E9120E3C4C6007AA5AD /* Embed Frameworks */ = {
+		C732647820E3DE5F00C83CA2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C77B8E8E20E3C4C6007AA5AD /* ResearchKit.framework in Embed Frameworks */,
+				C732647520E3DE5F00C83CA2 /* ResearchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,9 +107,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
+		C732646320E3DD8E00C83CA2 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
+		C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppleWatchHeartRateCollection.entitlements; sourceTree = "<group>"; };
+		C732647220E3DE5400C83CA2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		C732647A20E3E15300C83CA2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSegue.swift; sourceTree = "<group>"; };
+		C732647E20E3E36600C83CA2 /* HealthDataAuthStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataAuthStep.swift; sourceTree = "<group>"; };
+		C732648220E3E63500C83CA2 /* HealthDataAuthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataAuthStepViewController.swift; sourceTree = "<group>"; };
+		C742F84320E4E7350028A123 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		C742F84820E508D70028A123 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C77B8E5720E3C47B007AA5AD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
 		C77B8E5A20E3C47B007AA5AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C77B8E5F20E3C47B007AA5AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77B8E8D20E3C4C6007AA5AD /* ResearchKit.framework in Frameworks */,
+				C732647420E3DE5F00C83CA2 /* ResearchKit.framework in Frameworks */,
+				C732647320E3DE5400C83CA2 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,14 +165,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C732646120E3DD6B00C83CA2 /* Consent */ = {
+			isa = PBXGroup;
+			children = (
+				C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */,
+				C732646220E3DD8E00C83CA2 /* ConsentDocument.swift */,
+				C732646320E3DD8E00C83CA2 /* ConsentTask.swift */,
+				C732647E20E3E36600C83CA2 /* HealthDataAuthStep.swift */,
+				C732648220E3E63500C83CA2 /* HealthDataAuthStepViewController.swift */,
+			);
+			path = Consent;
+			sourceTree = "<group>";
+		};
+		C732646720E3DE4B00C83CA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */,
+				C732646F20E3DE4C00C83CA2 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C732647120E3DE5400C83CA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C732647220E3DE5400C83CA2 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C732647920E3E14400C83CA2 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				C732647A20E3E15300C83CA2 /* IntroViewController.swift */,
+				C732647C20E3E1CC00C83CA2 /* IntroSegue.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		C742F84220E4E6F90028A123 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				C742F84320E4E7350028A123 /* TasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		C742F84520E508540028A123 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C742F84820E508D70028A123 /* MenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		C77B8E4920E3C47B007AA5AD = {
 			isa = PBXGroup;
 			children = (
-				C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */,
+				C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */,
 				C77B8E5420E3C47B007AA5AD /* AppleWatchHeartRateCollection */,
 				C77B8E6920E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests */,
 				C77B8E7420E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests */,
 				C77B8E5320E3C47B007AA5AD /* Products */,
+				C732647120E3DE5400C83CA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,9 +248,14 @@
 				C77B8E9220E3C4E4007AA5AD /* Consent */,
 				C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */,
 				C77B8E5920E3C47B007AA5AD /* Main.storyboard */,
-				C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */,
 				C77B8E5E20E3C47B007AA5AD /* LaunchScreen.storyboard */,
+				C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */,
+				C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */,
 				C77B8E6120E3C47B007AA5AD /* Info.plist */,
+				C732647920E3E14400C83CA2 /* Intro */,
+				C732646120E3DD6B00C83CA2 /* Consent */,
+				C742F84520E508540028A123 /* Menu */,
+				C742F84220E4E6F90028A123 /* Tasks */,
 			);
 			path = AppleWatchHeartRateCollection;
 			sourceTree = "<group>";
@@ -212,12 +316,12 @@
 				C77B8E4E20E3C47B007AA5AD /* Sources */,
 				C77B8E4F20E3C47B007AA5AD /* Frameworks */,
 				C77B8E5020E3C47B007AA5AD /* Resources */,
-				C77B8E9120E3C4C6007AA5AD /* Embed Frameworks */,
+				C732647820E3DE5F00C83CA2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C77B8E9020E3C4C6007AA5AD /* PBXTargetDependency */,
+				C732647720E3DE5F00C83CA2 /* PBXTargetDependency */,
 			);
 			name = AppleWatchHeartRateCollection;
 			productName = AppleWatchHeartRateCollection;
@@ -273,6 +377,11 @@
 					C77B8E5120E3C47B007AA5AD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					C77B8E6520E3C47B007AA5AD = {
 						CreatedOnToolsVersion = 9.2;
@@ -299,8 +408,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C77B8E8420E3C489007AA5AD /* Products */;
-					ProjectRef = C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */;
+					ProductGroup = C732646720E3DE4B00C83CA2 /* Products */;
+					ProjectRef = C732646620E3DE4B00C83CA2 /* ResearchKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -313,18 +422,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C77B8E8A20E3C489007AA5AD /* ResearchKit.framework */ = {
+		C732646D20E3DE4C00C83CA2 /* ResearchKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ResearchKit.framework;
-			remoteRef = C77B8E8920E3C489007AA5AD /* PBXContainerItemProxy */;
+			remoteRef = C732646C20E3DE4C00C83CA2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C77B8E8C20E3C489007AA5AD /* ResearchKitTests.xctest */ = {
+		C732646F20E3DE4C00C83CA2 /* ResearchKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ResearchKitTests.xctest;
-			remoteRef = C77B8E8B20E3C489007AA5AD /* PBXContainerItemProxy */;
+			remoteRef = C732646E20E3DE4C00C83CA2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -361,12 +470,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77B8E9820E3C7D2007AA5AD /* IntroSegue.swift in Sources */,
-				C77B8E5820E3C47B007AA5AD /* IntroViewController.swift in Sources */,
-				C77B8E9520E3C5DD007AA5AD /* ConsentViewController.swift in Sources */,
-				C77B8E9C20E3C99E007AA5AD /* ConsentTask.swift in Sources */,
+				C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */,
+				C742F84920E508D70028A123 /* MenuViewController.swift in Sources */,
+				C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */,
+				C732646520E3DD8E00C83CA2 /* ConsentTask.swift in Sources */,
+				C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */,
+				C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
-				C77B8E9A20E3C84F007AA5AD /* ConsentDocument.swift in Sources */,
+				C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */,
+				C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */,
+				C742F84420E4E7350028A123 /* TasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +502,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C732647720E3DE5F00C83CA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = C732647620E3DE5F00C83CA2 /* PBXContainerItemProxy */;
+		};
 		C77B8E6820E3C47B007AA5AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C77B8E5120E3C47B007AA5AD /* AppleWatchHeartRateCollection */;
@@ -538,6 +656,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppleWatchHeartRateCollection/AppleWatchHeartRateCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JM5BU57S6W;
 				INFOPLIST_FILE = AppleWatchHeartRateCollection/Info.plist;
@@ -555,6 +674,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppleWatchHeartRateCollection/AppleWatchHeartRateCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JM5BU57S6W;
 				INFOPLIST_FILE = AppleWatchHeartRateCollection/Info.plist;

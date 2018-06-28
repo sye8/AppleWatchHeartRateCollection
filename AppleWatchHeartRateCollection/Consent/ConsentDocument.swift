@@ -8,88 +8,52 @@
 
 import ResearchKit
 
-class ConsentDocument: ORKConsentDocument {
+public var ConsentDocument: ORKConsentDocument {
     
-    let sectionsText = [
-        "Section 1: Welcome. The study is about...",
-        "Section 2: Data Gathering. The study will gather your heart rate data from your Apple Watch...",
+    let consentDocument = ORKConsentDocument()
+    consentDocument.title = "Research Study Consent Form"
+    
+    let sectionTypes: [ORKConsentSectionType] = [
+        .overview,
+        .dataGathering,
+        .privacy,
+        .dataUse,
+        .timeCommitment,
+        .studySurvey,
+        .studyTasks,
+        .withdrawing
+    ]
+    
+    let text = [
+        "Section 1: Welcome. This study is about...",
+        "Section 2: Data Gathering. This study will collect data from your Apple Watch...",
         "Section 3: Privacy. We value your privacy...",
-        "Section 4: Data Use. The study will use your heart rate to...",
-        "Section 5: Time Commitment. The study will only use your...",
-        "Section 6: Study Survey. The study requires you to complete a survey to...",
-        "Section 7: Study Tasks. The study requires you to complete...",
+        "Section 4: Data Use. The data collected will be used for...",
+        "Section 5: Time Commitment. This study will take you roughly...",
+        "Section 6: Study Survey. For this study, you will need to fill out a survey...",
+        "Section 7: Study Tasks. You will be requested to do these tasks...",
         "Section 8: Withdrawing. To withdraw from the study..."
     ]
     
-    override init() {
-        super.init()
-        
-        title = NSLocalizedString("Research Health Study Consent Form", comment: "")
-        
-        let sectionTypes: [ORKConsentSectionType] = [
-            .overview,
-            .dataGathering,
-            .privacy,
-            .dataUse,
-            .timeCommitment,
-            .studySurvey,
-            .studyTasks,
-            .withdrawing
-        ]
-        
-        for sectionType in sectionTypes {
-            let section = ORKConsentSection(type: sectionType)
-            
-            let localizedText = NSLocalizedString(sectionsText[sectionTypes.index(of: sectionType)!], comment: "")
-            let localizedSummary = localizedText.components(separatedBy: ".")[0] + "."
-            
-            section.summary = localizedSummary
-            section.content = localizedText
-
-        }
-        
-        let signature = ORKConsentSignature(forPersonWithTitle: nil, dateFormatString: nil, identifier: "ConsentDocumentParticipantSignature")
-        addSignature(signature)
-    }
+    consentDocument.sections = []
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension ORKConsentSectionType: CustomStringConvertible {
-    
-    public var description: String {
-        switch self {
-        case .overview:
-            return "Overview"
-            
-        case .dataGathering:
-            return "DataGathering"
-            
-        case .privacy:
-            return "Privacy"
-            
-        case .dataUse:
-            return "DataUse"
-            
-        case .timeCommitment:
-            return "TimeCommitment"
-            
-        case .studySurvey:
-            return "StudySurvey"
-            
-        case .studyTasks:
-            return "StudyTasks"
-            
-        case .withdrawing:
-            return "Withdrawing"
-            
-        case .custom:
-            return "Custom"
-            
-        case .onlyInDocument:
-            return "OnlyInDocument"
+    for sectionType in sectionTypes {
+        let section = ORKConsentSection(type: sectionType)
+        
+        let localizedText = NSLocalizedString(text[sectionTypes.index(of: sectionType)!], comment: "")
+        let localizedSummary = localizedText.components(separatedBy: ".")[0] + "."
+        
+        section.summary = localizedSummary
+        section.content = localizedText
+        
+        if consentDocument.sections == nil {
+            consentDocument.sections = [section]
+        } else {
+            consentDocument.sections!.append(section)
         }
     }
+    
+    consentDocument.addSignature(ORKConsentSignature(forPersonWithTitle: nil, dateFormatString: nil, identifier: "ConsentDocumentParticipantSignature"))
+        
+    return consentDocument
 }

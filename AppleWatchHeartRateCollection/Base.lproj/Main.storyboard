@@ -1,91 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Dp-UZ-tTU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Intro View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="7Ty-Bp-c2F">
             <objects>
-                <viewController title="Intro View Controller" id="BYZ-38-t0r" customClass="IntroViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <segue destination="XbB-AW-lva" kind="custom" identifier="toConsent" customClass="IntroSegue" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" id="mX4-7S-tDL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="599" y="36"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="XVI-ba-axi">
-            <objects>
-                <viewController id="NIJ-2X-h52" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jZ2-Cl-rLj">
+                <viewController title="Intro View Controller" id="2Dp-UZ-tTU" customClass="IntroViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGZ-gY-5j9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="mrS-iM-yBX"/>
+                        <viewLayoutGuide key="safeArea" id="1WK-Tg-jIE"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="toConsent" customClass="IntroSegue" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" id="HOt-V3-57w"/>
+                        <segue destination="o8j-9k-q25" kind="custom" identifier="toTasks" customClass="IntroSegue" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" id="B7l-bZ-DA1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PeV-Ww-ydE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9HN-DW-1uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="448"/>
+            <point key="canvasLocation" x="-502" y="373"/>
         </scene>
-        <!--ConsentViewController-->
-        <scene sceneID="BIG-3m-H1P">
+        <!--Consent View Controller-->
+        <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="ConsentViewController" id="XbB-AW-lva" customClass="ConsentViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nn8-11-asJ">
+                <viewController title="Consent View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Title&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-xi-VdX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Title&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atA-rI-AFS">
                                 <rect key="frame" x="149" y="100" width="77" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Brief Description&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLH-oO-pt8">
-                                <rect key="frame" x="108" y="209" width="158" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Brief Description&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-hI-H2b">
+                                <rect key="frame" x="108.5" y="209" width="158" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVI-D1-9eF">
-                                <rect key="frame" x="139" y="431" width="96" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78h-gd-zS5">
+                                <rect key="frame" x="143.5" y="411" width="88" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <state key="normal" title="Join Study"/>
                                 <connections>
-                                    <action selector="joinButtonTapped:" destination="XbB-AW-lva" eventType="touchUpInside" id="4WC-5G-Z6R"/>
+                                    <action selector="consentTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A2q-zj-9n4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="atA-rI-AFS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9zW-Wo-djX"/>
+                            <constraint firstItem="78h-gd-zS5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obG-25-ezV"/>
+                            <constraint firstItem="atA-rI-AFS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="sPI-ES-JyX"/>
+                            <constraint firstItem="1ea-hI-H2b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tcc-kw-QTG"/>
+                            <constraint firstItem="1ea-hI-H2b" firstAttribute="top" secondItem="atA-rI-AFS" secondAttribute="bottom" constant="80" id="z2r-Lc-UCB"/>
+                            <constraint firstItem="78h-gd-zS5" firstAttribute="top" secondItem="1ea-hI-H2b" secondAttribute="bottom" constant="180" id="zzq-zB-5GM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="cbu-hn-dXR" kind="unwind" identifier="unwindToTasks" unwindAction="unwindToTasks:" id="2Sb-Dh-b3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="cbu-hn-dXR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="41"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="gHx-xW-CKA">
+            <objects>
+                <viewController id="81z-e2-JjQ" customClass="MenuViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wbo-Tv-vjr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="til-ZS-mny">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTappedWithSender:" destination="81z-e2-JjQ" eventType="touchUpInside" id="TaO-Xi-CiJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pLH-oO-pt8" firstAttribute="centerX" secondItem="Nn8-11-asJ" secondAttribute="centerX" id="SRU-3q-HQW"/>
-                            <constraint firstItem="pLH-oO-pt8" firstAttribute="top" secondItem="pqc-xi-VdX" secondAttribute="bottom" constant="80" id="h3F-ur-BpF"/>
-                            <constraint firstItem="iVI-D1-9eF" firstAttribute="top" secondItem="pLH-oO-pt8" secondAttribute="bottom" constant="200" id="kXb-Dv-BAR"/>
-                            <constraint firstItem="pqc-xi-VdX" firstAttribute="centerX" secondItem="Nn8-11-asJ" secondAttribute="centerX" id="oNn-Iq-rZz"/>
-                            <constraint firstItem="pqc-xi-VdX" firstAttribute="top" secondItem="cg4-ML-4n0" secondAttribute="top" constant="80" id="xfd-IM-yX1"/>
-                            <constraint firstItem="iVI-D1-9eF" firstAttribute="centerX" secondItem="Nn8-11-asJ" secondAttribute="centerX" id="zfp-FG-JMQ"/>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerY" secondItem="wbo-Tv-vjr" secondAttribute="centerY" id="Rdg-ce-Bb2"/>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerX" secondItem="wbo-Tv-vjr" secondAttribute="centerX" id="tcD-ob-dOF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cg4-ML-4n0"/>
+                        <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menu" id="FBh-2v-EhG"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ns9-lf-4Tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnc-mk-0sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="-275"/>
+            <point key="canvasLocation" x="1414" y="1254"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="MKV-8X-rxZ">
+            <objects>
+                <tableViewController id="AAh-0u-5Vp" customClass="TasksViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZQg-Ql-XjK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L4O-z0-We6">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L4O-z0-We6" id="lqB-KL-v7s">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AAh-0u-5Vp" id="JwK-ng-C6X"/>
+                            <outlet property="delegate" destination="AAh-0u-5Vp" id="c8m-AO-0fd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tasks" id="qkM-2V-FMc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcb-YD-zsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="373"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="MkM-s9-D4S">
+            <objects>
+                <navigationController title="Tasks" id="VhS-iP-NCP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" image="tab_activities" id="k8P-4t-Uk2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wmk-hO-mNQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AAh-0u-5Vp" kind="relationship" relationship="rootViewController" id="sRq-WD-czE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0u-dJ-ovK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414" y="373"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="raR-p3-85H">
+            <objects>
+                <tabBarController id="o8j-9k-q25" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nt0-mw-WTz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VhS-iP-NCP" kind="relationship" relationship="viewControllers" id="ayq-Fk-cFw"/>
+                        <segue destination="81z-e2-JjQ" kind="relationship" relationship="viewControllers" id="MWM-Zt-BCv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bs6-iC-FpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="788"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="30" height="30"/>
+        <image name="tab_activities" width="23" height="23"/>
+    </resources>
 </document>

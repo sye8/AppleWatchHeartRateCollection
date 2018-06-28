@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IntroViewController.swift
 //  AppleWatchHeartRateCollection
 //
 //  Created by 叶思帆 on 27/06/2018.
@@ -8,21 +8,41 @@
 
 import UIKit
 
-class IntroViewController: UIViewController {
+import ResearchKit
 
+class IntroViewController: UIViewController {
+    
+    var contentHidden = false {
+        didSet {
+            guard contentHidden != oldValue && isViewLoaded else { return }
+            childViewControllers.first?.view.isHidden = contentHidden
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        toConsent()
+        //Branch off into different views
+        if ORKPasscodeViewController.isPasscodeStoredInKeychain(){
+            toTasks()
+        }else{
+            toConsent()
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func unwindToTasks(_ segue: UIStoryboardSegue){
+        toTasks()
+    }
+    
     func toConsent(){
         performSegue(withIdentifier: "toConsent", sender: self)
     }
-
+    
+    func toTasks(){
+        performSegue(withIdentifier: "toTasks", sender: self)
+    }
 }
-
