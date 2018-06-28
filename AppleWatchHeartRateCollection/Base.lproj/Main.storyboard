@@ -22,16 +22,16 @@
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="toConsent" customClass="IntroSegue" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" id="HOt-V3-57w"/>
+                        <segue destination="o8j-9k-q25" kind="custom" identifier="toTasks" customClass="IntroSegue" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" id="B7l-bZ-DA1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HN-DW-1uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-857" y="378"/>
+            <point key="canvasLocation" x="-516" y="373"/>
         </scene>
         <!--Consent View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController title="Consent View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -70,8 +70,63 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="386" y="41"/>
         </scene>
+        <!--About-->
+        <scene sceneID="gHx-xW-CKA">
+            <objects>
+                <viewController id="81z-e2-JjQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wbo-Tv-vjr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="heart-fitness" id="FBh-2v-EhG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnc-mk-0sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414" y="1049"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="zYT-7x-Tbq">
+            <objects>
+                <viewController id="hbb-JY-t1K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="06g-4o-Imi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XSJ-UQ-5C5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="tab_activities" id="nDv-IL-PSH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tj-w5-qYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414" y="373"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="raR-p3-85H">
+            <objects>
+                <tabBarController id="o8j-9k-q25" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nt0-mw-WTz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hbb-JY-t1K" kind="relationship" relationship="viewControllers" id="lEE-jX-lFQ"/>
+                        <segue destination="81z-e2-JjQ" kind="relationship" relationship="viewControllers" id="MWM-Zt-BCv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bs6-iC-FpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="728"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="heart-fitness" width="15" height="13"/>
+        <image name="tab_activities" width="23" height="23"/>
+    </resources>
 </document>
