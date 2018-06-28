@@ -34,7 +34,12 @@ extension ViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         //Handle results with taskViewController.result
-        taskViewController.dismiss(animated: true, completion: nil)
+        switch reason{
+            case .completed:
+                performSegue(withIdentifier: "unwindToTasks", sender: nil)
+            case .discarded, .failed, .saved:
+                dismiss(animated: true, completion: nil)
+        }
     }
     
     func taskViewController(_ taskViewController: ORKTaskViewController, viewControllerFor step: ORKStep) -> ORKStepViewController? {

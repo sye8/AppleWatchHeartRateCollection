@@ -27,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HN-DW-1uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-516" y="373"/>
+            <point key="canvasLocation" x="-502" y="373"/>
         </scene>
         <!--Consent View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -69,8 +69,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="cbu-hn-dXR" kind="unwind" identifier="unwindToTasks" unwindAction="unwindToTasks:" id="2Sb-Dh-b3h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="cbu-hn-dXR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="386" y="41"/>
         </scene>
@@ -90,14 +94,29 @@
             </objects>
             <point key="canvasLocation" x="1414" y="1049"/>
         </scene>
-        <!--Tasks-->
+        <!--Tasks View Controller-->
         <scene sceneID="zYT-7x-Tbq">
             <objects>
-                <viewController id="hbb-JY-t1K" sceneMemberID="viewController">
+                <viewController title="Tasks View Controller" id="hbb-JY-t1K" customClass="TasksViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="06g-4o-Imi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="til-ZS-mny">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTappedWithSender:" destination="hbb-JY-t1K" eventType="touchUpInside" id="iRN-b8-eK6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerX" secondItem="06g-4o-Imi" secondAttribute="centerX" id="Dwr-I6-QQs"/>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerY" secondItem="06g-4o-Imi" secondAttribute="centerY" id="Fwh-ad-wlc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XSJ-UQ-5C5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="tab_activities" id="nDv-IL-PSH"/>
@@ -122,7 +141,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bs6-iC-FpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="728"/>
+            <point key="canvasLocation" x="385" y="788"/>
         </scene>
     </scenes>
     <resources>
