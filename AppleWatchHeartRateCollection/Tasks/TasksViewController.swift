@@ -43,7 +43,7 @@ import UIKit
 import ResearchKit
 
 enum Task: Int {
-    case survey, heartrate
+    case survey, fitness, heartrate
     
     static var allValues: [Task] {
         var index = 0
@@ -60,6 +60,8 @@ enum Task: Int {
         switch self {
             case .survey:
                 return "Survey"
+            case .fitness:
+                return "Fitness"
             case .heartrate:
                 return "Heart Rate"
         }
@@ -69,6 +71,8 @@ enum Task: Int {
         switch self {
             case .survey:
                 return "Answer # short questions"
+            case .fitness:
+                return "Compares your walking and resting heart rate"
             case .heartrate:
                 return "Heart rate data collection"
         }
@@ -94,8 +98,6 @@ class TasksViewController: UITableViewController {
         return cell
     }
     
-    // MARK: UITableViewDelegate
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let activity = Task(rawValue: (indexPath as NSIndexPath).row) else { return }
         
@@ -103,10 +105,11 @@ class TasksViewController: UITableViewController {
         switch activity {
             case .survey:
                 taskViewController = ORKTaskViewController(task: SurveyTask, taskRun: NSUUID() as UUID)
+            case .fitness:
+                taskViewController = ORKTaskViewController(task: FitnessTask, taskRun: NSUUID() as UUID)
             case .heartrate:
-                taskViewController = ORKTaskViewController(task: SurveyTask, taskRun: NSUUID() as UUID)
+                taskViewController = ORKTaskViewController(task: FitnessTask, taskRun: NSUUID() as UUID)
         }
-        
         taskViewController.delegate = self
         navigationController?.present(taskViewController, animated: true, completion: nil)
     }
