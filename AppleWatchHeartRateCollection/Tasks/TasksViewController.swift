@@ -84,7 +84,7 @@ class TasksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         
         if let activity = Task(rawValue: (indexPath as NSIndexPath).row) {
             cell.textLabel?.text = activity.title
