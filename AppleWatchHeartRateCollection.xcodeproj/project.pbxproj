@@ -25,12 +25,6 @@
 		C77B8E6020E3C47B007AA5AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5E20E3C47B007AA5AD /* LaunchScreen.storyboard */; };
 		C77B8E6B20E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E6A20E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests.swift */; };
 		C77B8E7620E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */; };
-		C77B8E8D20E3C4C6007AA5AD /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8E8A20E3C489007AA5AD /* ResearchKit.framework */; };
-		C77B8E8E20E3C4C6007AA5AD /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8E8A20E3C489007AA5AD /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C77B8E9520E3C5DD007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */; };
-		C77B8E9820E3C7D2007AA5AD /* IntroSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9720E3C7D2007AA5AD /* IntroSegue.swift */; };
-		C77B8E9A20E3C84F007AA5AD /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */; };
-		C77B8E9C20E3C99E007AA5AD /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,27 +62,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C77B8E5120E3C47B007AA5AD;
 			remoteInfo = AppleWatchHeartRateCollection;
-		};
-		C77B8E8920E3C489007AA5AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B183A5951A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
-		C77B8E8B20E3C489007AA5AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
-			remoteInfo = ResearchKitTests;
-		};
-		C77B8E8F20E3C4C6007AA5AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = ResearchKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -131,9 +104,7 @@
 		C77B8E7120E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWatchHeartRateCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchHeartRateCollectionUITests.swift; sourceTree = "<group>"; };
 		C77B8E7720E3C47B007AA5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C77B8E8320E3C489007AA5AD /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		C77B8E9420E3C5DD007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
-		C77B8E9720E3C7D2007AA5AD /* IntroSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSegue.swift; sourceTree = "<group>"; };
 		C77B8E9920E3C84F007AA5AD /* ConsentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,14 +215,13 @@
 		C77B8E5420E3C47B007AA5AD /* AppleWatchHeartRateCollection */ = {
 			isa = PBXGroup;
 			children = (
-				C77B8E9620E3C7BE007AA5AD /* Intro */,
-				C77B8E9220E3C4E4007AA5AD /* Consent */,
 				C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */,
 				C77B8E5920E3C47B007AA5AD /* Main.storyboard */,
 				C77B8E5E20E3C47B007AA5AD /* LaunchScreen.storyboard */,
 				C77B8E5C20E3C47B007AA5AD /* Assets.xcassets */,
 				C732647020E3DE5400C83CA2 /* AppleWatchHeartRateCollection.entitlements */,
 				C77B8E6120E3C47B007AA5AD /* Info.plist */,
+				C77B8E9220E3C4E4007AA5AD /* Consent */,
 				C732647920E3E14400C83CA2 /* Intro */,
 				C732646120E3DD6B00C83CA2 /* Consent */,
 				C742F84520E508540028A123 /* Menu */,
@@ -278,15 +248,6 @@
 			path = AppleWatchHeartRateCollectionUITests;
 			sourceTree = "<group>";
 		};
-		C77B8E8420E3C489007AA5AD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C77B8E8A20E3C489007AA5AD /* ResearchKit.framework */,
-				C77B8E8C20E3C489007AA5AD /* ResearchKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C77B8E9220E3C4E4007AA5AD /* Consent */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,15 +256,6 @@
 				C77B8E9B20E3C99E007AA5AD /* ConsentTask.swift */,
 			);
 			path = Consent;
-			sourceTree = "<group>";
-		};
-		C77B8E9620E3C7BE007AA5AD /* Intro */ = {
-			isa = PBXGroup;
-			children = (
-				C77B8E5720E3C47B007AA5AD /* IntroViewController.swift */,
-				C77B8E9720E3C7D2007AA5AD /* IntroSegue.swift */,
-			);
-			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,11 +468,6 @@
 			isa = PBXTargetDependency;
 			target = C77B8E5120E3C47B007AA5AD /* AppleWatchHeartRateCollection */;
 			targetProxy = C77B8E7220E3C47B007AA5AD /* PBXContainerItemProxy */;
-		};
-		C77B8E9020E3C4C6007AA5AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ResearchKit;
-			targetProxy = C77B8E8F20E3C4C6007AA5AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
