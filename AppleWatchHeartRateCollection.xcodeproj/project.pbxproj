@@ -20,6 +20,8 @@
 		C742F84920E508D70028A123 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F84820E508D70028A123 /* MenuViewController.swift */; };
 		C742F85420E525DF0028A123 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F85320E525DF0028A123 /* SurveyTask.swift */; };
 		C742F86220E53C360028A123 /* HeartRateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F86120E53C360028A123 /* HeartRateTask.swift */; };
+		C7504B6620E61DB50092DF49 /* ResultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7504B6520E61DB50092DF49 /* ResultParser.swift */; };
+		C7504B6920E62D810092DF49 /* FitnessTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7504B6720E62D810092DF49 /* FitnessTask.swift */; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
 		C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
@@ -95,6 +97,8 @@
 		C742F84820E508D70028A123 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C742F85320E525DF0028A123 /* SurveyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		C742F86120E53C360028A123 /* HeartRateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTask.swift; sourceTree = "<group>"; };
+		C7504B6520E61DB50092DF49 /* ResultParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultParser.swift; sourceTree = "<group>"; };
+		C7504B6720E62D810092DF49 /* FitnessTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessTask.swift; sourceTree = "<group>"; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		C742F84220E4E6F90028A123 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				C7504B6720E62D810092DF49 /* FitnessTask.swift */,
 				C742F84320E4E7350028A123 /* TasksViewController.swift */,
 				C742F85320E525DF0028A123 /* SurveyTask.swift */,
 				C742F86120E53C360028A123 /* HeartRateTask.swift */,
@@ -191,6 +196,21 @@
 				C742F84820E508D70028A123 /* MenuViewController.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		C7504B6120E61D450092DF49 /* HeartRateTask */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HeartRateTask;
+			sourceTree = "<group>";
+		};
+		C7504B6420E61D970092DF49 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				C7504B6520E61DB50092DF49 /* ResultParser.swift */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		C77B8E4920E3C47B007AA5AD = {
@@ -228,6 +248,8 @@
 				C732646120E3DD6B00C83CA2 /* Consent */,
 				C742F84520E508540028A123 /* Menu */,
 				C742F84220E4E6F90028A123 /* Tasks */,
+				C7504B6120E61D450092DF49 /* HeartRateTask */,
+				C7504B6420E61D970092DF49 /* Results */,
 			);
 			path = AppleWatchHeartRateCollection;
 			sourceTree = "<group>";
@@ -422,10 +444,12 @@
 				C732646520E3DD8E00C83CA2 /* ConsentTask.swift in Sources */,
 				C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */,
 				C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */,
+				C7504B6620E61DB50092DF49 /* ResultParser.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
 				C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */,
 				C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */,
 				C742F84420E4E7350028A123 /* TasksViewController.swift in Sources */,
+				C7504B6920E62D810092DF49 /* FitnessTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

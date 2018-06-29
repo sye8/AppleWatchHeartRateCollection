@@ -38,8 +38,9 @@
 //  Copyright © 2018 Sifan Ye. All rights reserved.
 //
 
-import ResearchKit
 import HealthKit
+
+import ResearchKit
 
 class HealthDataStep: ORKInstructionStep {
     

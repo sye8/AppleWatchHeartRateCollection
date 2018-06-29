@@ -108,7 +108,7 @@ class TasksViewController: UITableViewController {
             case .fitness:
                 taskViewController = ORKTaskViewController(task: FitnessTask, taskRun: NSUUID() as UUID)
             case .heartrate:
-                taskViewController = ORKTaskViewController(task: FitnessTask, taskRun: NSUUID() as UUID)
+                taskViewController = ORKTaskViewController(task: HeartRateTask, taskRun: NSUUID() as UUID)
         }
         taskViewController.delegate = self
         navigationController?.present(taskViewController, animated: true, completion: nil)
