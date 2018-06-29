@@ -26,7 +26,8 @@ public var HeartRateTask: ORKOrderedTask {
     heartrateStep.shouldShowDefaultTimer = true
     heartrateStep.shouldStartTimerAutomatically = true
     heartrateStep.shouldContinueOnFinish = true
-    heartrateStep.title = "Please <do sth> for 30 seconds"
+    heartrateStep.title = "TV + Heart Rate"
+    heartrateStep.text = "Please <do sth> for 30 seconds"
     steps += [heartrateStep]
     
     let summaryStep = ORKCompletionStep(identifier: "SummaryStep")

@@ -43,7 +43,7 @@ import UIKit
 import ResearchKit
 
 enum Task: Int {
-    case survey, fitness, heartrate
+    case survey, heartrate
     
     static var allValues: [Task] {
         var index = 0
@@ -60,8 +60,6 @@ enum Task: Int {
         switch self {
             case .survey:
                 return "Survey"
-            case .fitness:
-                return "Fitness"
             case .heartrate:
                 return "Heart Rate"
         }
@@ -71,8 +69,6 @@ enum Task: Int {
         switch self {
             case .survey:
                 return "Answer # short questions"
-            case .fitness:
-                return "Compares your walking and resting heart rate"
             case .heartrate:
                 return "Heart rate data collection"
         }
@@ -105,8 +101,6 @@ class TasksViewController: UITableViewController {
         switch activity {
             case .survey:
                 taskViewController = ORKTaskViewController(task: SurveyTask, taskRun: NSUUID() as UUID)
-            case .fitness:
-                taskViewController = ORKTaskViewController(task: FitnessTask, taskRun: NSUUID() as UUID)
             case .heartrate:
                 taskViewController = ORKTaskViewController(task: HeartRateTask, taskRun: NSUUID() as UUID)
         }
@@ -120,14 +114,6 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         // Handle results using taskViewController.result
-        switch reason{
-            case .completed:
-                print("Completed")
-            case .discarded, .failed, .saved:
-                print("Discarded/failed/saved")
-                print(error)
-                print("\n\n")
-        }
         taskViewController.dismiss(animated: true, completion: nil)
     }
 }
