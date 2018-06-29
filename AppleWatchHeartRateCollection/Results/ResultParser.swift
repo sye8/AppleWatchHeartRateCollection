@@ -12,11 +12,20 @@ import ResearchKit
 
 struct ResultParser{
     
-    static func findHeartRate(result: ORKTaskResult) -> [URL]{
+    static func findHeartRate(result: ORKTaskResult) -> URL?{
         
-        var urls = [URL]()
+        if let results = result.results,
+            results.count > 1,
+            let heartResult = results[1] as? ORKStepResult,
+            let heartSubresults = heartResult.results,
+            heartSubresults.count > 0,
+            let fileResult = heartSubresults[0] as? ORKFileResult,
+            let fileURL = fileResult.fileURL{
+            
+            return fileURL
+        }
         
-        return urls
+        return nil
     }
     
 }
