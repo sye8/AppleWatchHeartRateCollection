@@ -182,9 +182,9 @@
 		C742F84220E4E6F90028A123 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				C7504B6720E62D810092DF49 /* FitnessTask.swift */,
 				C742F84320E4E7350028A123 /* TasksViewController.swift */,
 				C742F85320E525DF0028A123 /* SurveyTask.swift */,
+				C7504B6720E62D810092DF49 /* FitnessTask.swift */,
 				C742F86120E53C360028A123 /* HeartRateTask.swift */,
 			);
 			path = Tasks;
@@ -196,13 +196,6 @@
 				C742F84820E508D70028A123 /* MenuViewController.swift */,
 			);
 			path = Menu;
-			sourceTree = "<group>";
-		};
-		C7504B6120E61D450092DF49 /* HeartRateTask */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HeartRateTask;
 			sourceTree = "<group>";
 		};
 		C7504B6420E61D970092DF49 /* Results */ = {
@@ -248,7 +241,6 @@
 				C732646120E3DD6B00C83CA2 /* Consent */,
 				C742F84520E508540028A123 /* Menu */,
 				C742F84220E4E6F90028A123 /* Tasks */,
-				C7504B6120E61D450092DF49 /* HeartRateTask */,
 				C7504B6420E61D970092DF49 /* Results */,
 			);
 			path = AppleWatchHeartRateCollection;

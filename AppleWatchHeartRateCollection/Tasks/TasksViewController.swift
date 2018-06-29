@@ -111,7 +111,7 @@ class TasksViewController: UITableViewController {
                 taskViewController = ORKTaskViewController(task: HeartRateTask, taskRun: NSUUID() as UUID)
         }
         taskViewController.delegate = self
-        navigationController?.present(taskViewController, animated: true, completion: nil)
+        present(taskViewController, animated: true, completion: nil)
     }
 }
 

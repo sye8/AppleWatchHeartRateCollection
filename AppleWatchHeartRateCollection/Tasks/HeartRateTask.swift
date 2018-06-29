@@ -19,7 +19,7 @@ public var HeartRateTask: ORKOrderedTask {
     instructionStep.text = "<Description>"
     steps += [instructionStep]
     
-    let config = ORKHealthQuantityTypeRecorderConfiguration(identifier: "heartRateConfig", healthQuantityType: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, unit: HKUnit(from: "bpm"))
+    let config = ORKHealthQuantityTypeRecorderConfiguration(identifier: "heartRateConfig", healthQuantityType: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, unit: HKUnit(from: "count/min"))
     let heartrateStep = ORKActiveStep(identifier: "heartrate")
     heartrateStep.stepDuration = 30
     heartrateStep.recorderConfigurations = [config]
