@@ -111,6 +111,7 @@ class TasksViewController: UITableViewController {
                 taskViewController = ORKTaskViewController(task: HeartRateTask, taskRun: NSUUID() as UUID)
         }
         taskViewController.delegate = self
+        taskViewController.outputDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         present(taskViewController, animated: true, completion: nil)
     }
 }
@@ -119,6 +120,14 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         // Handle results using taskViewController.result
+        switch reason{
+            case .completed:
+                print("Completed")
+            case .discarded, .failed, .saved:
+                print("Discarded/failed/saved")
+                print(error)
+                print("\n\n")
+        }
         taskViewController.dismiss(animated: true, completion: nil)
     }
 }

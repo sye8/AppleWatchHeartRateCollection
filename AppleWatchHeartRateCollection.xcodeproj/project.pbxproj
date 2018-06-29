@@ -239,8 +239,8 @@
 				C77B8E6120E3C47B007AA5AD /* Info.plist */,
 				C732647920E3E14400C83CA2 /* Intro */,
 				C732646120E3DD6B00C83CA2 /* Consent */,
-				C742F84520E508540028A123 /* Menu */,
 				C742F84220E4E6F90028A123 /* Tasks */,
+				C742F84520E508540028A123 /* Menu */,
 				C7504B6420E61D970092DF49 /* Results */,
 			);
 			path = AppleWatchHeartRateCollection;
