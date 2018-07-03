@@ -128,6 +128,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C71C075020EB684000136187 /* HeartRateCollection Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HeartRateCollection Extension.entitlements"; sourceTree = "<group>"; };
+		C71C075120EB684B00136187 /* HeartRateCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeartRateCollection.entitlements; sourceTree = "<group>"; };
 		C7289C6420EA80C600A08256 /* HeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7289C6720EA80C600A08256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C7289C6920EA80C600A08256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		C7289C6520EA80C600A08256 /* HeartRateCollection */ = {
 			isa = PBXGroup;
 			children = (
+				C71C075120EB684B00136187 /* HeartRateCollection.entitlements */,
 				C7289C6620EA80C600A08256 /* Interface.storyboard */,
 				C7289C6920EA80C600A08256 /* Assets.xcassets */,
 				C7289C6B20EA80C600A08256 /* Info.plist */,
@@ -216,6 +219,7 @@
 		C7289C7420EA80C600A08256 /* HeartRateCollection Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C71C075020EB684000136187 /* HeartRateCollection Extension.entitlements */,
 				C7289C7520EA80C600A08256 /* InterfaceController.swift */,
 				C7289C7720EA80C600A08256 /* ExtensionDelegate.swift */,
 				C7289C7920EA80C600A08256 /* NotificationController.swift */,
@@ -460,10 +464,20 @@
 					C7289C6320EA80C600A08256 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C7289C6F20EA80C600A08256 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C77B8E5120E3C47B007AA5AD = {
 						CreatedOnToolsVersion = 9.2;
@@ -685,6 +699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HeartRateCollection Extension/HeartRateCollection Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q53EDNFKEK;
 				INFOPLIST_FILE = "HeartRateCollection Extension/Info.plist";
@@ -703,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HeartRateCollection Extension/HeartRateCollection Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q53EDNFKEK;
 				INFOPLIST_FILE = "HeartRateCollection Extension/Info.plist";
@@ -722,6 +738,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeartRateCollection/HeartRateCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q53EDNFKEK;
 				IBSC_MODULE = HeartRateCollection_Extension;
@@ -741,6 +758,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeartRateCollection/HeartRateCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q53EDNFKEK;
 				IBSC_MODULE = HeartRateCollection_Extension;
