@@ -6,14 +6,15 @@
 //  Copyright © 2018 Sifan Ye. All rights reserved.
 //
 
+import HealthKit
 import WatchKit
-import Foundation
-
 
 class IntroInterfaceController: WKInterfaceController {
 
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var button: WKInterfaceButton!
+    
+    var isRecording = false
     
     override func awake(withContext context: Any?){
         // Configure interface objects here.
@@ -35,7 +36,18 @@ class IntroInterfaceController: WKInterfaceController {
     }
 
     @IBAction func buttonHandler(){
-        
+        if(!isRecording){
+            let stopTitle = NSMutableAttributedString(string: "Stop Recording")
+            stopTitle.setAttributes([NSAttributedStringKey.foregroundColor: UIColor.red], range: NSMakeRange(0, stopTitle.length))
+            button.setAttributedTitle(stopTitle)
+            isRecording = true
+        }else{
+            let exitTitle = NSMutableAttributedString(string: "Start Recording")
+            exitTitle.setAttributes([NSAttributedStringKey.foregroundColor: UIColor.green], range: NSMakeRange(0, exitTitle.length))
+            button.setAttributedTitle(exitTitle)
+            isRecording = false
+            presentController(withName: "Done", context: nil)
+        }
     }
     
 }

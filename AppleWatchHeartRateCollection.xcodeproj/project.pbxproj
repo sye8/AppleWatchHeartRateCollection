@@ -38,6 +38,7 @@
 		C77B8E6B20E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E6A20E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests.swift */; };
 		C77B8E7620E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */; };
 		C7D3278320EBAD2E007018A5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6620EA80C600A08256 /* Interface.storyboard */; };
+		C7D3278820EBB7CD007018A5 /* DoneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		C77B8E7120E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWatchHeartRateCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchHeartRateCollectionUITests.swift; sourceTree = "<group>"; };
 		C77B8E7720E3C47B007AA5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			children = (
 				C71C075020EB684000136187 /* HeartRateCollection Extension.entitlements */,
 				C7289C7520EA80C600A08256 /* IntroInterfaceController.swift */,
+				C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */,
 				C7289C7720EA80C600A08256 /* ExtensionDelegate.swift */,
 				C7289C7920EA80C600A08256 /* NotificationController.swift */,
 				C7289C7B20EA80C600A08256 /* Assets.xcassets */,
@@ -599,6 +602,7 @@
 				C7289C7A20EA80C600A08256 /* NotificationController.swift in Sources */,
 				C7289C7820EA80C600A08256 /* ExtensionDelegate.swift in Sources */,
 				C7289C7620EA80C600A08256 /* IntroInterfaceController.swift in Sources */,
+				C7D3278820EBB7CD007018A5 /* DoneInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
