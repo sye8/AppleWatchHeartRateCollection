@@ -8,16 +8,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Intro-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HeartRateCollection" customModuleProvider="target">
+                <controller identifier="Intro" id="AgC-eL-Hgc" customClass="IntroInterfaceController" customModule="HeartRateCollection_Extension">
                     <items>
-                        <label width="136" height="65.5" alignment="left" text="When prompted, please click the button below" numberOfLines="3" id="oWf-JR-uIt"/>
-                        <button width="1" alignment="left" title="Start" id="kJi-Ux-Jp7"/>
+                        <imageView width="0.40000000000000002" height="0.34000000000000002" alignment="center" verticalAlignment="center" image="heartbeat" id="9tq-hU-6e2">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </imageView>
+                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Heart Rate Study" numberOfLines="3" id="oWf-JR-uIt">
+                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start Recording" id="kJi-Ux-Jp7">
+                            <color key="titleColor" red="0.54414624040000004" green="1" blue="0.5117802011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="15"/>
+                        </button>
                     </items>
                     <connections>
-                        <outlet property="button" destination="kJi-Ux-Jp7" id="PFH-kz-AdM"/>
+                        <outlet property="button" destination="kJi-Ux-Jp7" id="dks-Zr-vu6"/>
                         <outlet property="label" destination="oWf-JR-uIt" id="QJK-mZ-Pp4"/>
                     </connections>
                 </controller>
