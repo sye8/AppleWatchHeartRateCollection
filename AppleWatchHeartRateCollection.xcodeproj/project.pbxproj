@@ -29,7 +29,6 @@
 		C742F85420E525DF0028A123 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F85320E525DF0028A123 /* SurveyTask.swift */; };
 		C742F86220E53C360028A123 /* HeartRateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742F86120E53C360028A123 /* HeartRateTask.swift */; };
 		C7504B6620E61DB50092DF49 /* ResultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7504B6520E61DB50092DF49 /* ResultParser.swift */; };
-		C7504B6920E62D810092DF49 /* FitnessTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7504B6720E62D810092DF49 /* FitnessTask.swift */; };
 		C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */; };
 		C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */; };
 		C77B8E5B20E3C47B007AA5AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B8E5920E3C47B007AA5AD /* Main.storyboard */; };
@@ -39,6 +38,7 @@
 		C77B8E7620E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */; };
 		C7D3278320EBAD2E007018A5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6620EA80C600A08256 /* Interface.storyboard */; };
 		C7D3278820EBB7CD007018A5 /* DoneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */; };
+		C7D3278A20EBD142007018A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D3278920EBD142007018A5 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +157,6 @@
 		C742F85320E525DF0028A123 /* SurveyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		C742F86120E53C360028A123 /* HeartRateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTask.swift; sourceTree = "<group>"; };
 		C7504B6520E61DB50092DF49 /* ResultParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultParser.swift; sourceTree = "<group>"; };
-		C7504B6720E62D810092DF49 /* FitnessTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessTask.swift; sourceTree = "<group>"; };
 		C77B8E5220E3C47B007AA5AD /* AppleWatchHeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchHeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E5520E3C47B007AA5AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77B8E5720E3C47B007AA5AD /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +171,7 @@
 		C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchHeartRateCollectionUITests.swift; sourceTree = "<group>"; };
 		C77B8E7720E3C47B007AA5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneInterfaceController.swift; sourceTree = "<group>"; };
+		C7D3278920EBD142007018A5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D3278A20EBD142007018A5 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +259,7 @@
 		C732647120E3DE5400C83CA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7D3278920EBD142007018A5 /* HealthKit.framework */,
 				C732647220E3DE5400C83CA2 /* HealthKit.framework */,
 			);
 			name = Frameworks;
@@ -277,7 +279,6 @@
 			children = (
 				C742F84320E4E7350028A123 /* TasksViewController.swift */,
 				C742F85320E525DF0028A123 /* SurveyTask.swift */,
-				C7504B6720E62D810092DF49 /* FitnessTask.swift */,
 				C742F86120E53C360028A123 /* HeartRateTask.swift */,
 			);
 			path = Tasks;
@@ -481,6 +482,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
 						};
 					};
 					C77B8E5120E3C47B007AA5AD = {
@@ -623,7 +627,6 @@
 				C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */,
 				C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */,
 				C742F84420E4E7350028A123 /* TasksViewController.swift in Sources */,
-				C7504B6920E62D810092DF49 /* FitnessTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

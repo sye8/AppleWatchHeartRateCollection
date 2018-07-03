@@ -115,5 +115,6 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         // Handle results using taskViewController.result
         taskViewController.dismiss(animated: true, completion: nil)
+        
     }
 }
