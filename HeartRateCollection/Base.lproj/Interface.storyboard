@@ -16,7 +16,7 @@
                         <imageView width="0.40000000000000002" height="0.34000000000000002" alignment="center" verticalAlignment="center" image="heartbeat" id="9tq-hU-6e2">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
-                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Heart Rate Study" numberOfLines="3" id="oWf-JR-uIt">
+                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Heart Rate Study" textAlignment="center" numberOfLines="3" id="oWf-JR-uIt">
                             <fontDescription key="font" type="boldSystem" pointSize="16"/>
                         </label>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Start Recording" id="kJi-Ux-Jp7">

@@ -59,6 +59,7 @@ class IntroInterfaceController: WKInterfaceController{
             exitTitle.setAttributes([NSAttributedStringKey.foregroundColor: UIColor.green], range: NSMakeRange(0, exitTitle.length))
             button.setAttributedTitle(exitTitle)
             isRecording = false
+            healthStore.end(session!)
             presentController(withName: "Done", context: nil)
         }
     }
@@ -112,6 +113,15 @@ extension IntroInterfaceController: HKWorkoutSessionDelegate{
         
         let heartRateQuery = HKAnchoredObjectQuery(type: quantityType!, predicate: predicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
             //Do nothing
+        }
+        
+        heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
+            guard let samples = samples as? [HKQuantitySample] else {return}
+            DispatchQueue.main.async {
+                guard let sample = samples.first else { return }
+                let value = sample.quantity.doubleValue(for: HKUnit(from: "count/min"))
+                self.label.setText(String(UInt16(value)))
+            }
         }
         
         return heartRateQuery
