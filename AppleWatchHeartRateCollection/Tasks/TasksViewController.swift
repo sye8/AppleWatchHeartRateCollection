@@ -114,7 +114,21 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         // Handle results using taskViewController.result
+        if reason == .completed{
+            print("Task completed")
+            if taskViewController.task?.identifier == "HeartRateTask"{
+                print("Heart Rate Task")
+                if let hrURL = ResultParser.findHeartRate(result: taskViewController.result){
+                    do{
+                        let result = try NSString.init(contentsOf: hrURL, encoding: String.Encoding.utf8.rawValue)
+                        print("\nResults:")
+                        print(result)
+                    }catch{
+                        //do nothing
+                    }
+                }
+            }
+        }
         taskViewController.dismiss(animated: true, completion: nil)
-        
     }
 }

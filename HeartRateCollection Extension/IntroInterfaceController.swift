@@ -60,6 +60,7 @@ class IntroInterfaceController: WKInterfaceController{
             button.setAttributedTitle(exitTitle)
             isRecording = false
             healthStore.end(session!)
+            label.setText("Heart Rate Study")
             presentController(withName: "Done", context: nil)
         }
     }
