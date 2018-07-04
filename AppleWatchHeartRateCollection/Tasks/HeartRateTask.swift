@@ -19,6 +19,15 @@ public var HeartRateTask: ORKOrderedTask {
     instructionStep.text = "<Description>\nPlease open the corresponding app on your watch and press \"Start Recording\"."
     steps += [instructionStep]
     
+    let heartrateCountdown = ORKActiveStep(identifier: "countdown")
+    heartrateCountdown.title = "TV + Heart Rate"
+    heartrateCountdown.text = "Activity will start in 5 seconds"
+    heartrateCountdown.stepDuration = 5
+    heartrateCountdown.shouldShowDefaultTimer = true
+    heartrateCountdown.shouldStartTimerAutomatically = true
+    heartrateCountdown.shouldContinueOnFinish = true
+    steps += [heartrateCountdown]
+    
     let config = ORKHealthQuantityTypeRecorderConfiguration(identifier: "heartRateConfig", healthQuantityType: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, unit: HKUnit(from: "count/min"))
     let heartrateStep = ORKActiveStep(identifier: "heartrate")
     heartrateStep.stepDuration = 30
