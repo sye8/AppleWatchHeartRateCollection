@@ -1,5 +1,5 @@
 # AppleWatchHeartRateCollection (Work In Progress)
-Use ResearchKit to collect Apple Watch heart rate data on iOS devices
+Use ResearchKit and HealthKit to collect Apple Watch heart rate data on iOS devices
 
 ## OS Versions and Dependencies
 - Xcode >= 8.0 (well you also need macOS for that)
