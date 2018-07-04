@@ -52,13 +52,11 @@ struct ResultParser{
         guard let results = results as? [HKQuantitySample] else { return }
         for result in results{
             print("HR: \(result.quantity.doubleValue(for: HKUnit(from: "count/min")))")
-            print("Quantity Type: \(result.quantityType)")
             print("Start Date: \(result.startDate)")
             print("End Date: \(result.endDate)")
             print("Source: \(result.sourceRevision)")
             print("\n")
         }
-        print("All results are here")
     }
     
 }

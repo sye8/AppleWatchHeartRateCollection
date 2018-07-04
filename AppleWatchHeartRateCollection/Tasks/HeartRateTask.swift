@@ -30,13 +30,13 @@ public var HeartRateTask: ORKOrderedTask {
     
     let config = ORKHealthQuantityTypeRecorderConfiguration(identifier: "heartRateConfig", healthQuantityType: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, unit: HKUnit(from: "count/min"))
     let heartrateStep = ORKActiveStep(identifier: "HeartRate")
-    heartrateStep.stepDuration = 30
+    heartrateStep.stepDuration = 60
     heartrateStep.recorderConfigurations = [config]
     heartrateStep.shouldShowDefaultTimer = true
     heartrateStep.shouldStartTimerAutomatically = true
     heartrateStep.shouldContinueOnFinish = true
     heartrateStep.title = "TV + Heart Rate"
-    heartrateStep.text = "Please <do sth> for 30 seconds."
+    heartrateStep.text = "Please <do sth> for 1 minute."
     steps += [heartrateStep]
     
     let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
