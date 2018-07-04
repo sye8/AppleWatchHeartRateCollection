@@ -113,6 +113,7 @@ class TasksViewController: UITableViewController {
 extension TasksViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
+        taskViewController.dismiss(animated: true, completion: nil)
         // Handle results using taskViewController.result
         if reason == .completed{
             print("Task completed")
@@ -125,6 +126,5 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
                 ResultParser.findHeartRateResults(result: taskViewController.result)
             }
         }
-        taskViewController.dismiss(animated: true, completion: nil)
     }
 }

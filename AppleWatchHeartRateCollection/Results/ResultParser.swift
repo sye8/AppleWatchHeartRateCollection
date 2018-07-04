@@ -43,14 +43,13 @@ struct ResultParser{
                     print("Error: \(String(describing: error))")
                     return
                 }
-                print("Results")
                 printHR(results: results)
         }
         healthStore.execute(hrQuery)
     }
     
     static func printHR(results: [HKSample]?){
-        guard let results = results as? [HKQuantitySample] else {return}
+        guard let results = results as? [HKQuantitySample] else { return }
         for result in results{
             print("HR: \(result.quantity.doubleValue(for: HKUnit(from: "count/min")))")
             print("Quantity Type: \(result.quantityType)")
@@ -59,6 +58,7 @@ struct ResultParser{
             print("Source: \(result.sourceRevision)")
             print("\n")
         }
+        print("All results are here")
     }
     
 }
