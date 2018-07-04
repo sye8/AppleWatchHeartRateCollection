@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HealthKit
 
 import ResearchKit
 
@@ -21,8 +22,42 @@ struct ResultParser{
         print("Heart Rate Results")
         if let results = result.results, results.count > 2, let hrResult = results[2] as? ORKStepResult{
             print("Start and end time stamp")
-            print(hrResult.startDate)
-            print(hrResult.endDate)
+            let start = hrResult.startDate
+            let end = hrResult.endDate
+            print("Start: \(start); End: \(end)")
+            getHRFromHealthKit(startDate: start, endDate: end)
+        }
+    }
+    
+    static func getHRFromHealthKit(startDate: Date, endDate: Date){
+        let healthStore = HKHealthStore()
+        let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
+        let hrQuery = HKSampleQuery(sampleType: hrType,
+                                predicate: predicate,
+                                limit: Int(HKObjectQueryNoLimit),
+                                sortDescriptors: sortDescriptors){
+            (query:HKSampleQuery, results:[HKSample]?, error: Error?) -> Void in
+                guard error == nil else {
+                    print("Error: \(String(describing: error))")
+                    return
+                }
+                print("Results")
+                printHR(results: results)
+        }
+        healthStore.execute(hrQuery)
+    }
+    
+    static func printHR(results: [HKSample]?){
+        guard let results = results as? [HKQuantitySample] else {return}
+        for result in results{
+            print("HR: \(result.quantity.doubleValue(for: HKUnit(from: "count/min")))")
+            print("Quantity Type: \(result.quantityType)")
+            print("Start Date: \(result.startDate)")
+            print("End Date: \(result.endDate)")
+            print("Source: \(result.sourceRevision)")
+            print("\n")
         }
     }
     
