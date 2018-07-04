@@ -1,4 +1,4 @@
-# AppleWatchHeartRateCollection
+# AppleWatchHeartRateCollection (Work In Progress)
 Use ResearchKit to collect Apple Watch heart rate data on iOS devices
 
 ## OS Versions and Dependencies
@@ -10,3 +10,4 @@ Use ResearchKit to collect Apple Watch heart rate data on iOS devices
 ## Referenced Projects
 - [Accessing Heart Rate Data for Your ResearchKit Study](https://www.raywenderlich.com/117433/accessing-heart-rate-data-researchkit-study)
 - [watchOS-3-heartrate](https://github.com/coolioxlr/watchOS-3-heartrate)
+- [ResearchKit](https://github.com/ResearchKit/ResearchKit) sample projects
