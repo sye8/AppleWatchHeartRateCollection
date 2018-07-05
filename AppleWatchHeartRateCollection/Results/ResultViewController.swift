@@ -27,7 +27,7 @@ class ResultViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let source = String(describing: result.identifier)
-        print("Result from \(source)")
+//        print("Result from \(source)")
         switch source{
             case "SurveyTask":
                 //Get results from ResearchKit

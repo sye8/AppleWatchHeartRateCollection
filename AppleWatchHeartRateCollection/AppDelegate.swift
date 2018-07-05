@@ -44,8 +44,6 @@ import ResearchKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    let healthStore = HKHealthStore()
     
     var window: UIWindow?
 
