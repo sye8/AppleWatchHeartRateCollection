@@ -19,6 +19,7 @@ class MenuViewController: UIViewController {
     
     @IBAction func buttonTapped(sender: AnyObject){
         ORKPasscodeViewController.removePasscodeFromKeychain()
+        performSegue(withIdentifier: "returnToConsent", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {

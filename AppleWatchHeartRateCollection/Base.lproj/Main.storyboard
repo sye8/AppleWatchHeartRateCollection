@@ -86,19 +86,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="til-ZS-mny">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="91" y="502" width="192" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Withdraw from study">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTappedWithSender:" destination="81z-e2-JjQ" eventType="touchUpInside" id="TaO-Xi-CiJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="returnToConsent" id="O9z-G6-jbh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="til-ZS-mny" firstAttribute="centerY" secondItem="wbo-Tv-vjr" secondAttribute="centerY" id="Rdg-ce-Bb2"/>
-                            <constraint firstItem="til-ZS-mny" firstAttribute="centerX" secondItem="wbo-Tv-vjr" secondAttribute="centerX" id="tcD-ob-dOF"/>
+                            <constraint firstItem="5uN-PM-hQC" firstAttribute="bottom" secondItem="til-ZS-mny" secondAttribute="bottom" constant="80" id="ANZ-AU-3yG"/>
+                            <constraint firstItem="til-ZS-mny" firstAttribute="centerX" secondItem="wbo-Tv-vjr" secondAttribute="centerX" id="K9W-UP-psW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
                     </view>
@@ -177,4 +179,7 @@
         <image name="menu" width="30" height="30"/>
         <image name="tab_activities" width="23" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="O9z-G6-jbh"/>
+    </inferredMetricsTieBreakers>
 </document>
