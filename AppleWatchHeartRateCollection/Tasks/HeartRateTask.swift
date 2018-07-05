@@ -28,10 +28,10 @@ public var HeartRateTask: ORKOrderedTask {
     heartrateCountdown.shouldContinueOnFinish = true
     steps += [heartrateCountdown]
     
-    let config = ORKHealthQuantityTypeRecorderConfiguration(identifier: "heartRateConfig", healthQuantityType: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, unit: HKUnit(from: "count/min"))
+//    let config = ORKHealthQuantityTypeRecorderConfiguration(identifier: "heartRateConfig", healthQuantityType: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, unit: HKUnit(from: "count/min"))
     let heartrateStep = ORKActiveStep(identifier: "HeartRate")
     heartrateStep.stepDuration = 60
-    heartrateStep.recorderConfigurations = [config]
+//    heartrateStep.recorderConfigurations = [config]
     heartrateStep.shouldShowDefaultTimer = true
     heartrateStep.shouldStartTimerAutomatically = true
     heartrateStep.shouldContinueOnFinish = true
