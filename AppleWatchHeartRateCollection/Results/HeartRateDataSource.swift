@@ -35,5 +35,8 @@ class HeartRateDataSource: NSObject, ORKValueRangeGraphChartViewDataSource{
         return "\(pointIndex + 1)"
     }
     
+    func updatePlotPoints(newPlotPoints: [ORKValueRange]){
+        self.plotPoints = newPlotPoints
+    }
    
 }

@@ -48,6 +48,17 @@ class ResultsViewController: UITableViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let hrLineGraphChartView = hrLineGraphChartCell.graphView as! ORKLineGraphChartView
+        let hrDataSource = hrLineGraphChartView.dataSource as! HeartRateDataSource
+        hrDataSource.updatePlotPoints(newPlotPoints: [
+                ORKValueRange(value: 2),
+                ORKValueRange(value: 4),
+                ORKValueRange(value: 8),
+                ORKValueRange(value: 16),
+                ORKValueRange(value: 32),
+                ORKValueRange(value: 64),
+            ])
+        hrLineGraphChartCell.graphView.reloadData()
         hrLineGraphChartCell.graphView.animate(withDuration: 0.5)
     }
     
