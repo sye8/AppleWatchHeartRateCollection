@@ -145,54 +145,54 @@
         <scene sceneID="8fx-wm-BS7">
             <objects>
                 <tableViewController title="Results" id="ave-2F-8Es" customClass="ResultsViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QXv-c6-dvr">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QXv-c6-dvr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="r6b-vx-OQV">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="258" id="rhg-Wy-PGW">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhg-Wy-PGW" id="blH-sq-fAp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="257.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-zG-3mD">
-                                                    <rect key="frame" x="16" y="11" width="89" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Mn-RjV" customClass="ORKLineGraphChartView">
-                                                    <rect key="frame" x="16" y="40" width="343" height="207"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                            </subviews>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HRLineGraphChartCell" rowHeight="258" id="rhg-Wy-PGW" customClass="HRLineGraphChartCell" customModule="AppleWatchHeartRateCollection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="258"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhg-Wy-PGW" id="blH-sq-fAp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-zG-3mD">
+                                            <rect key="frame" x="16" y="11" width="89" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Mn-RjV" customClass="ORKLineGraphChartView">
+                                            <rect key="frame" x="16" y="47" width="343" height="200"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="xsc-zG-3mD" firstAttribute="top" secondItem="blH-sq-fAp" secondAttribute="topMargin" id="G1O-C3-XpX"/>
-                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="J1E-It-6Vu"/>
-                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="KfB-dZ-gw7"/>
-                                                <constraint firstItem="xsc-zG-3mD" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="OXS-8z-e5n"/>
-                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="top" secondItem="xsc-zG-3mD" secondAttribute="bottom" constant="8" id="dGE-a5-vz5"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xsc-zG-3mD" secondAttribute="trailingMargin" id="ebr-iL-Nuh"/>
-                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="bottom" secondItem="blH-sq-fAp" secondAttribute="bottomMargin" id="vVW-5l-3gx"/>
+                                                <constraint firstAttribute="height" constant="200" id="4Og-Ft-LiE"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0ws-Mn-RjV" firstAttribute="top" secondItem="xsc-zG-3mD" secondAttribute="bottom" constant="8" id="6tg-KW-H3c"/>
+                                        <constraint firstItem="xsc-zG-3mD" firstAttribute="top" secondItem="blH-sq-fAp" secondAttribute="topMargin" id="G1O-C3-XpX"/>
+                                        <constraint firstItem="xsc-zG-3mD" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="OXS-8z-e5n"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xsc-zG-3mD" secondAttribute="trailingMargin" id="Rkb-N1-zby"/>
+                                        <constraint firstItem="0ws-Mn-RjV" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="jKc-P8-fcb"/>
+                                        <constraint firstItem="0ws-Mn-RjV" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="n2K-ck-R1u"/>
+                                        <constraint firstItem="0ws-Mn-RjV" firstAttribute="bottom" secondItem="blH-sq-fAp" secondAttribute="bottomMargin" id="oTL-Ux-KVJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="graphView" destination="0ws-Mn-RjV" id="rAO-hF-gYh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="ave-2F-8Es" id="XiC-PX-znR"/>
                             <outlet property="delegate" destination="ave-2F-8Es" id="qG3-4F-alP"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Results" id="Sb6-LM-s3x"/>
-                    <connections>
-                        <outlet property="hrLineGraph" destination="0ws-Mn-RjV" id="6WD-at-ug6"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNy-qL-iTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

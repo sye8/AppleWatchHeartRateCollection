@@ -10,38 +10,30 @@ import ResearchKit
 
 class HeartRateDataSource: NSObject, ORKValueRangeGraphChartViewDataSource{
     
-    var plotpoints: [ORKValueRange]
-    
-    init(plotpoints: [ORKValueRange]){
-        self.plotpoints = plotpoints
-        super.init()
-    }
-    
-    func graphChartView(_ graphChartView: ORKGraphChartView, dataPointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKValueRange {
-        return plotpoints[pointIndex]
-    }
-    
-    func graphChartView(_ graphChartView: ORKGraphChartView, numberOfDataPointsForPlotIndex plotIndex: Int) -> Int {
-        return plotpoints.count
-    }
+    var plotPoints = [
+        ORKValueRange(value: 10),
+        ORKValueRange(value: 20),
+        ORKValueRange(value: 25),
+        ORKValueRange(),
+        ORKValueRange(value: 30),
+        ORKValueRange(value: 40),
+    ]
     
     func numberOfPlots(in graphChartView: ORKGraphChartView) -> Int {
         return 1
     }
     
-    func maximumValue(for graphChartView: ORKGraphChartView) -> Double {
-        return 200
+    func graphChartView(_ graphChartView: ORKGraphChartView, dataPointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKValueRange {
+        return plotPoints[pointIndex]
     }
     
-    func minimumValue(for graphChartView: ORKGraphChartView) -> Double {
-        return 30
+    func graphChartView(_ graphChartView: ORKGraphChartView, numberOfDataPointsForPlotIndex plotIndex: Int) -> Int {
+        return plotPoints.count
     }
     
     func graphChartView(_ graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
         return "\(pointIndex + 1)"
     }
     
-    func graphChartView(_ graphChartView: ORKGraphChartView, drawsPointIndicatorsForPlotIndex plotIndex: Int) -> Bool {
-        return true
-    }
+   
 }

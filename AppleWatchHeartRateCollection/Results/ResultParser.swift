@@ -30,15 +30,15 @@ struct ResultParser{
                     print("Data conversion error")
                     return
                 }
-                TaskResults.hrPlotpoints = [ORKValueRange]()
+                TaskResults.hrPlotPoints = [ORKValueRange]()
                 ResultParser.printHR(results: results)
                 for (index, entry) in results.enumerated(){
                     if(index > 0){
                         if(entry.startDate.timeIntervalSince(results[index-1].startDate) > 5){
-                            TaskResults.hrPlotpoints.append(ORKValueRange())
+                            TaskResults.hrPlotPoints.append(ORKValueRange())
                         }
                     }
-                    TaskResults.hrPlotpoints.append(ORKValueRange(value: entry.quantity.doubleValue(for: HKUnit(from: "count/min"))))
+                    TaskResults.hrPlotPoints.append(ORKValueRange(value: entry.quantity.doubleValue(for: HKUnit(from: "count/min"))))
                 }
             }
         }

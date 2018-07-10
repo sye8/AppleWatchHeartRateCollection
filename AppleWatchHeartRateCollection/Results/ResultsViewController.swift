@@ -14,33 +14,45 @@ struct TaskResults{
     static var surveyResult = ORKTaskResult()
     static var hrStartDate = Date.distantPast
     static var hrEndDate = Date.distantFuture
-    static var hrPlotpoints = [ORKValueRange]()
+    static var hrPlotPoints = [ORKValueRange]()
 }
 
 class ResultsViewController: UITableViewController{
     
-    @IBOutlet var hrLineGraph: ORKLineGraphChartView!
+    let hrLineGraphDataSource = HeartRateDataSource()
+    let hrLineGraphChartID = "HRLineGraphChartCell"
+    
+    var hrLineGraphChartCell: HRLineGraphChartCell!
+    
+    var chartCells: [UITableViewCell]!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tableView.allowsSelection = false
+        hrLineGraphChartCell = tableView.dequeueReusableCell(withIdentifier: hrLineGraphChartID) as! HRLineGraphChartCell
+        let hrLineGraphChartView = hrLineGraphChartCell.graphView as! ORKLineGraphChartView
+        hrLineGraphChartView.dataSource = hrLineGraphDataSource
+        hrLineGraphChartView.tintColor = UIColor(red: 255/255, green: 41/255, blue: 135/255, alpha: 1)
+        
+        chartCells = [hrLineGraphChartCell]
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+ 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chartCells.count
     }
     
-    override func viewWillAppear(_ animated: Bool){
-        super.viewWillAppear(true)
-        print("Results View Will Appear")
-        print("Start Date: \(TaskResults.hrStartDate)")
-        print("End Date: \(TaskResults.hrEndDate)")
-        if(TaskResults.hrStartDate != Date.distantPast && TaskResults.hrEndDate != Date.distantFuture){
-            ResultParser.getHKData(startDate: TaskResults.hrStartDate, endDate: TaskResults.hrEndDate)
-        }
-        print(TaskResults.hrPlotpoints)
-        hrLineGraph.dataSource = HeartRateDataSource(plotpoints: TaskResults.hrPlotpoints)
-        // Set the table view to automatically calculate the height of cells.
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
-        hrLineGraph.animate(withDuration: 0.5)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = chartCells[(indexPath as NSIndexPath).row];
+        return cell
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hrLineGraphChartCell.graphView.animate(withDuration: 0.5)
+    }
+    
+}
 
+class HRLineGraphChartCell: UITableViewCell{
+    @IBOutlet weak var graphView: ORKGraphChartView!
 }
