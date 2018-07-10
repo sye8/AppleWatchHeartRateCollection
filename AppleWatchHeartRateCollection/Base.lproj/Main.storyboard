@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,6 +102,7 @@
                         <constraints>
                             <constraint firstItem="til-ZS-mny" firstAttribute="leading" secondItem="5uN-PM-hQC" secondAttribute="leading" constant="30" id="39f-M3-blc"/>
                             <constraint firstItem="5uN-PM-hQC" firstAttribute="bottom" secondItem="til-ZS-mny" secondAttribute="bottom" constant="80" id="ANZ-AU-3yG"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="til-ZS-mny" secondAttribute="trailing" constant="20" symbolic="YES" id="oOV-8M-lAV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
                     </view>
@@ -108,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnc-mk-0sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="1254"/>
+            <point key="canvasLocation" x="1358" y="1560"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="MKV-8X-rxZ">
@@ -137,13 +139,87 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcb-YD-zsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="373"/>
+            <point key="canvasLocation" x="2054" y="41"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="8fx-wm-BS7">
+            <objects>
+                <tableViewController title="Results" id="ave-2F-8Es" customClass="ResultsViewController" customModule="AppleWatchHeartRateCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QXv-c6-dvr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="r6b-vx-OQV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="258" id="rhg-Wy-PGW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhg-Wy-PGW" id="blH-sq-fAp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="257.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-zG-3mD">
+                                                    <rect key="frame" x="16" y="11" width="89" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Mn-RjV" customClass="ORKLineGraphChartView">
+                                                    <rect key="frame" x="16" y="40" width="343" height="207"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xsc-zG-3mD" firstAttribute="top" secondItem="blH-sq-fAp" secondAttribute="topMargin" id="G1O-C3-XpX"/>
+                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="J1E-It-6Vu"/>
+                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="KfB-dZ-gw7"/>
+                                                <constraint firstItem="xsc-zG-3mD" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="OXS-8z-e5n"/>
+                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="top" secondItem="xsc-zG-3mD" secondAttribute="bottom" constant="8" id="dGE-a5-vz5"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xsc-zG-3mD" secondAttribute="trailingMargin" id="ebr-iL-Nuh"/>
+                                                <constraint firstItem="0ws-Mn-RjV" firstAttribute="bottom" secondItem="blH-sq-fAp" secondAttribute="bottomMargin" id="vVW-5l-3gx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ave-2F-8Es" id="XiC-PX-znR"/>
+                            <outlet property="delegate" destination="ave-2F-8Es" id="qG3-4F-alP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Results" id="Sb6-LM-s3x"/>
+                    <connections>
+                        <outlet property="hrLineGraph" destination="0ws-Mn-RjV" id="6WD-at-ug6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNy-qL-iTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2053.5999999999999" y="787.55622188905556"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="QOI-KR-ZNE">
+            <objects>
+                <navigationController title="Results" id="LgB-re-aZ9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Results" image="tab_results" id="CwZ-kX-7ZF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wFB-Np-97f">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ave-2F-8Es" kind="relationship" relationship="rootViewController" id="zY8-sE-H4c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGw-ce-IJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1358" y="788"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="MkM-s9-D4S">
             <objects>
                 <navigationController title="Tasks" id="VhS-iP-NCP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tasks" image="tab_activities" id="k8P-4t-Uk2"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="tab_tasks" id="k8P-4t-Uk2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wmk-hO-mNQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0u-dJ-ovK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="373"/>
+            <point key="canvasLocation" x="1358" y="41"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="raR-p3-85H">
@@ -167,6 +243,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="VhS-iP-NCP" kind="relationship" relationship="viewControllers" id="ayq-Fk-cFw"/>
+                        <segue destination="LgB-re-aZ9" kind="relationship" relationship="viewControllers" id="Hej-eD-qba"/>
                         <segue destination="81z-e2-JjQ" kind="relationship" relationship="viewControllers" id="MWM-Zt-BCv"/>
                     </connections>
                 </tabBarController>
@@ -177,7 +254,8 @@
     </scenes>
     <resources>
         <image name="menu" width="30" height="30"/>
-        <image name="tab_activities" width="23" height="23"/>
+        <image name="tab_results" width="29" height="21"/>
+        <image name="tab_tasks" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O9z-G6-jbh"/>

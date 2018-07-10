@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C70C13CB20EE3F70000550F9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C13CA20EE3F70000550F9 /* ResultViewController.swift */; };
+		C70C13CB20EE3F70000550F9 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C13CA20EE3F70000550F9 /* ResultsViewController.swift */; };
+		C7171AD720F4D55300FAE01B /* HeartRateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7171AD620F4D55300FAE01B /* HeartRateDataSource.swift */; };
 		C7289C6820EA80C600A08256 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6620EA80C600A08256 /* Interface.storyboard */; };
 		C7289C6A20EA80C600A08256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6920EA80C600A08256 /* Assets.xcassets */; };
 		C7289C7120EA80C600A08256 /* HeartRateCollection Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C7289C7020EA80C600A08256 /* HeartRateCollection Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -130,7 +131,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C70C13CA20EE3F70000550F9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C70C13CA20EE3F70000550F9 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		C7171AD620F4D55300FAE01B /* HeartRateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateDataSource.swift; sourceTree = "<group>"; };
 		C71C075020EB684000136187 /* HeartRateCollection Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HeartRateCollection Extension.entitlements"; sourceTree = "<group>"; };
 		C71C075120EB684B00136187 /* HeartRateCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeartRateCollection.entitlements; sourceTree = "<group>"; };
 		C7289C6420EA80C600A08256 /* HeartRateCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartRateCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,8 +296,9 @@
 		C7504B6420E61D970092DF49 /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				C70C13CA20EE3F70000550F9 /* ResultViewController.swift */,
+				C70C13CA20EE3F70000550F9 /* ResultsViewController.swift */,
 				C7504B6520E61DB50092DF49 /* ResultParser.swift */,
+				C7171AD620F4D55300FAE01B /* HeartRateDataSource.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			files = (
 				C732647B20E3E15300C83CA2 /* IntroViewController.swift in Sources */,
 				C742F86220E53C360028A123 /* HeartRateTask.swift in Sources */,
+				C7171AD720F4D55300FAE01B /* HeartRateDataSource.swift in Sources */,
 				C742F85420E525DF0028A123 /* SurveyTask.swift in Sources */,
 				C742F84920E508D70028A123 /* MenuViewController.swift in Sources */,
 				C77B8E5820E3C47B007AA5AD /* ConsentViewController.swift in Sources */,
@@ -622,7 +626,7 @@
 				C732646420E3DD8E00C83CA2 /* ConsentDocument.swift in Sources */,
 				C732647D20E3E1CC00C83CA2 /* IntroSegue.swift in Sources */,
 				C7504B6620E61DB50092DF49 /* ResultParser.swift in Sources */,
-				C70C13CB20EE3F70000550F9 /* ResultViewController.swift in Sources */,
+				C70C13CB20EE3F70000550F9 /* ResultsViewController.swift in Sources */,
 				C77B8E5620E3C47B007AA5AD /* AppDelegate.swift in Sources */,
 				C732648320E3E63500C83CA2 /* HealthDataAuthStepViewController.swift in Sources */,
 				C732647F20E3E36600C83CA2 /* HealthDataAuthStep.swift in Sources */,

@@ -11,45 +11,36 @@ import HealthKit
 
 import ResearchKit
 
-struct TaskResults{
-    static var surveyResult = ORKTaskResult()
-    static var hrStartDate = Date.distantPast
-    static var hrEndDate = Date.distantFuture
-}
-
 struct ResultParser{
     
-    static func findSurveyResults(result: ORKTaskResult){
-        print("Survey Results: ")
-        print(result)
-    }
- 
-    static func findHeartRateResults(result: ORKTaskResult){
-        print("Heart Rate Results")
-        if let results = result.results, results.count > 2, let hrResult = results[2] as? ORKStepResult{
-            print("Start and end time stamp")
-            let start = hrResult.startDate
-            let end = hrResult.endDate
-            print("Start: \(start); End: \(end)")
-            getHRFromHealthKit(startDate: start, endDate: end)
-        }
-    }
-    
-    static func getHRFromHealthKit(startDate: Date, endDate: Date){
+    static func getHKData(startDate: Date, endDate: Date){
         let healthStore = HKHealthStore()
         let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
-        let hrQuery = HKSampleQuery(sampleType: hrType,
-                                predicate: predicate,
-                                limit: Int(HKObjectQueryNoLimit),
-                                sortDescriptors: sortDescriptors){
+        let hrQuery = HKSampleQuery(sampleType: hrType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: sortDescriptors){
             (query:HKSampleQuery, results:[HKSample]?, error: Error?) -> Void in
+            
+            DispatchQueue.main.async {
                 guard error == nil else {
                     print("Error: \(String(describing: error))")
                     return
                 }
-                printHR(results: results)
+                guard let results = results as? [HKQuantitySample] else {
+                    print("Data conversion error")
+                    return
+                }
+                TaskResults.hrPlotpoints = [ORKValueRange]()
+                ResultParser.printHR(results: results)
+                for (index, entry) in results.enumerated(){
+                    if(index > 0){
+                        if(entry.startDate.timeIntervalSince(results[index-1].startDate) > 5){
+                            TaskResults.hrPlotpoints.append(ORKValueRange())
+                        }
+                    }
+                    TaskResults.hrPlotpoints.append(ORKValueRange(value: entry.quantity.doubleValue(for: HKUnit(from: "count/min"))))
+                }
+            }
         }
         healthStore.execute(hrQuery)
     }
