@@ -11,7 +11,7 @@
 		C7289C6820EA80C600A08256 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6620EA80C600A08256 /* Interface.storyboard */; };
 		C7289C6A20EA80C600A08256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6920EA80C600A08256 /* Assets.xcassets */; };
 		C7289C7120EA80C600A08256 /* HeartRateCollection Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C7289C7020EA80C600A08256 /* HeartRateCollection Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C7289C7620EA80C600A08256 /* IntroInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7289C7520EA80C600A08256 /* IntroInterfaceController.swift */; };
+		C7289C7620EA80C600A08256 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7289C7520EA80C600A08256 /* InterfaceController.swift */; };
 		C7289C7820EA80C600A08256 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7289C7720EA80C600A08256 /* ExtensionDelegate.swift */; };
 		C7289C7A20EA80C600A08256 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7289C7920EA80C600A08256 /* NotificationController.swift */; };
 		C7289C7C20EA80C600A08256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7289C7B20EA80C600A08256 /* Assets.xcassets */; };
@@ -38,7 +38,6 @@
 		C77B8E6B20E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E6A20E3C47B007AA5AD /* AppleWatchHeartRateCollectionTests.swift */; };
 		C77B8E7620E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */; };
 		C7D3278320EBAD2E007018A5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7289C6620EA80C600A08256 /* Interface.storyboard */; };
-		C7D3278820EBB7CD007018A5 /* DoneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */; };
 		C7D3278A20EBD142007018A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D3278920EBD142007018A5 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +138,7 @@
 		C7289C6920EA80C600A08256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7289C6B20EA80C600A08256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7289C7020EA80C600A08256 /* HeartRateCollection Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HeartRateCollection Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7289C7520EA80C600A08256 /* IntroInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroInterfaceController.swift; sourceTree = "<group>"; };
+		C7289C7520EA80C600A08256 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		C7289C7720EA80C600A08256 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		C7289C7920EA80C600A08256 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C7289C7B20EA80C600A08256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,7 +171,6 @@
 		C77B8E7120E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWatchHeartRateCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8E7520E3C47B007AA5AD /* AppleWatchHeartRateCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchHeartRateCollectionUITests.swift; sourceTree = "<group>"; };
 		C77B8E7720E3C47B007AA5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneInterfaceController.swift; sourceTree = "<group>"; };
 		C7D3278920EBD142007018A5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -226,8 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				C71C075020EB684000136187 /* HeartRateCollection Extension.entitlements */,
-				C7289C7520EA80C600A08256 /* IntroInterfaceController.swift */,
-				C7D3278720EBB7CD007018A5 /* DoneInterfaceController.swift */,
+				C7289C7520EA80C600A08256 /* InterfaceController.swift */,
 				C7289C7720EA80C600A08256 /* ExtensionDelegate.swift */,
 				C7289C7920EA80C600A08256 /* NotificationController.swift */,
 				C7289C7B20EA80C600A08256 /* Assets.xcassets */,
@@ -608,8 +605,7 @@
 			files = (
 				C7289C7A20EA80C600A08256 /* NotificationController.swift in Sources */,
 				C7289C7820EA80C600A08256 /* ExtensionDelegate.swift in Sources */,
-				C7289C7620EA80C600A08256 /* IntroInterfaceController.swift in Sources */,
-				C7D3278820EBB7CD007018A5 /* DoneInterfaceController.swift in Sources */,
+				C7289C7620EA80C600A08256 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

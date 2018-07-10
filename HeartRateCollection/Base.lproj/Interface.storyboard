@@ -11,7 +11,7 @@
         <!--Intro-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="Intro" id="AgC-eL-Hgc" customClass="IntroInterfaceController" customModule="HeartRateCollection_Extension">
+                <controller identifier="Intro" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HeartRateCollection_Extension">
                     <items>
                         <imageView width="0.40000000000000002" height="0.34000000000000002" alignment="center" verticalAlignment="center" image="heartbeat" id="9tq-hU-6e2">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,22 +35,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
-        </scene>
-        <!--Done-->
-        <scene sceneID="T5d-nO-akO">
-            <objects>
-                <controller identifier="Done" id="uue-EM-EIL" customClass="DoneInterfaceController" customModule="HeartRateCollection_Extension">
-                    <items>
-                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Thank you!" textAlignment="center" numberOfLines="3" id="cJ8-EH-YQk">
-                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
-                        </label>
-                        <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="checkmark" id="OWY-rN-dGU">
-                            <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </imageView>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="468" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

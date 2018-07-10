@@ -11,6 +11,12 @@ import HealthKit
 
 import ResearchKit
 
+struct TaskResults{
+    static var surveyResult = ORKTaskResult()
+    static var hrStartDate = Date.distantPast
+    static var hrEndDate = Date.distantFuture
+}
+
 struct ResultParser{
     
     static func findSurveyResults(result: ORKTaskResult){
@@ -21,10 +27,10 @@ struct ResultParser{
     static func findHeartRateResults(result: ORKTaskResult){
         print("Heart Rate Results")
         if let results = result.results, results.count > 2, let hrResult = results[2] as? ORKStepResult{
-//            print("Start and end time stamp")
+            print("Start and end time stamp")
             let start = hrResult.startDate
             let end = hrResult.endDate
-//            print("Start: \(start); End: \(end)")
+            print("Start: \(start); End: \(end)")
             getHRFromHealthKit(startDate: start, endDate: end)
         }
     }
@@ -43,7 +49,7 @@ struct ResultParser{
                     print("Error: \(String(describing: error))")
                     return
                 }
-//                printHR(results: results)
+                printHR(results: results)
         }
         healthStore.execute(hrQuery)
     }

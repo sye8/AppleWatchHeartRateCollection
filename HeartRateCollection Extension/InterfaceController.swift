@@ -9,7 +9,7 @@
 import HealthKit
 import WatchKit
 
-class IntroInterfaceController: WKInterfaceController{
+class InterfaceController: WKInterfaceController{
 
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var button: WKInterfaceButton!
@@ -61,12 +61,11 @@ class IntroInterfaceController: WKInterfaceController{
             isRecording = false
             healthStore.end(session!)
             label.setText("Heart Rate Study")
-            presentController(withName: "Done", context: nil)
         }
     }
 }
 
-extension IntroInterfaceController: HKWorkoutSessionDelegate{
+extension InterfaceController: HKWorkoutSessionDelegate{
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
         switch toState {
             case .running:

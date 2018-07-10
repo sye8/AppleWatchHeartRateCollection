@@ -10,7 +10,7 @@ import UIKit
 
 import ResearchKit
 
-class ResultViewController: UIViewController{
+class ResultViewController: UITableViewController{
     
     var result: ORKTaskResult
     

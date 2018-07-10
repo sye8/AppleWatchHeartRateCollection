@@ -105,7 +105,6 @@ class TasksViewController: UITableViewController {
                 taskViewController = ORKTaskViewController(task: HeartRateTask, taskRun: NSUUID() as UUID)
         }
         taskViewController.delegate = self
-        taskViewController.outputDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         present(taskViewController, animated: true, completion: nil)
     }
 }
@@ -113,10 +112,17 @@ class TasksViewController: UITableViewController {
 extension TasksViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
-        taskViewController.dismiss(animated: true, completion: nil)
         if reason == .completed{
             //Handle results in results view controller
-            self.navigationController?.pushViewController(ResultViewController(result: taskViewController.result), animated: true)
+            switch taskViewController.result.identifier{
+                case "SurveyTask":
+                    print(taskViewController.result)
+                case "HeartRateTask":
+                    print(taskViewController.result)
+                default:
+                    print("Unhandled Case")
+            }
         }
+        taskViewController.dismiss(animated: true, completion: nil)
     }
 }
