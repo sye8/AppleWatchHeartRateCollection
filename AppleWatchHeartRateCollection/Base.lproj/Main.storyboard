@@ -198,9 +198,12 @@
                                             <rect key="frame" x="16" y="364" width="343" height="34"/>
                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Refresh">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="refreshButtonHandler:" destination="rhg-Wy-PGW" eventType="touchUpInside" id="JC4-lX-xXp"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -235,6 +238,7 @@
                                 <connections>
                                     <outlet property="dataStartDateLabel" destination="BHU-cg-msc" id="aTH-h2-Eb8"/>
                                     <outlet property="graphView" destination="0ws-Mn-RjV" id="rAO-hF-gYh"/>
+                                    <outlet property="refreshButton" destination="qAc-hZ-Dcs" id="gnP-4S-ki1"/>
                                     <outlet property="taskStartDateLabel" destination="HCc-hE-4IP" id="Bv1-og-tha"/>
                                 </connections>
                             </tableViewCell>
@@ -308,7 +312,7 @@
     <resources>
         <image name="menu" width="30" height="30"/>
         <image name="tab_results" width="29" height="21"/>
-        <image name="tab_tasks" width="23" height="23"/>
+        <image name="tab_tasks" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O9z-G6-jbh"/>

@@ -49,22 +49,8 @@ class ResultsViewController: UITableViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if(TaskResults.hrStartDate != Date.distantPast && TaskResults.hrEndDate != Date.distantFuture){
-            ResultParser.getHKData(startDate: TaskResults.hrStartDate, endDate: TaskResults.hrEndDate)
-            let hrLineGraphChartView = hrLineGraphChartCell.graphView as! ORKLineGraphChartView
-            let hrDataSource = hrLineGraphChartView.dataSource as! HeartRateDataSource
-            hrDataSource.updatePlotPoints(newPlotPoints: TaskResults.hrPlotPoints)
-            if(TaskResults.hrDataStartDate != Date.distantPast){
-                hrLineGraphChartCell.taskStartDateLabel.text = "\(TaskResults.hrStartDate)"
-                hrLineGraphChartCell.dataStartDateLabel.text = "\(TaskResults.hrDataStartDate)"
-            }
-            hrLineGraphChartView.reloadData()
-        }else{
-            hrLineGraphChartCell.taskStartDateLabel.text = "N/A"
-            hrLineGraphChartCell.dataStartDateLabel.text = "N/A"
-        }
         self.tableView.allowsSelection = false
-        hrLineGraphChartCell.graphView.animate(withDuration: 0.5)
+        hrLineGraphChartCell.refresh()
     }
     
 }
@@ -73,4 +59,29 @@ class HRLineGraphChartCell: UITableViewCell{
     @IBOutlet weak var graphView: ORKGraphChartView!
     @IBOutlet weak var taskStartDateLabel: UILabel!
     @IBOutlet weak var dataStartDateLabel: UILabel!
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    @IBAction func refreshButtonHandler(_ sender: Any) {
+        self.refresh()
+    }
+    
+    func refresh(){
+        if(TaskResults.hrStartDate != Date.distantPast && TaskResults.hrEndDate != Date.distantFuture){
+            ResultParser.getHKData(startDate: TaskResults.hrStartDate, endDate: TaskResults.hrEndDate)
+            let hrLineGraphChartView = self.graphView as! ORKLineGraphChartView
+            let hrDataSource = hrLineGraphChartView.dataSource as! HeartRateDataSource
+            hrDataSource.updatePlotPoints(newPlotPoints: TaskResults.hrPlotPoints)
+            if(TaskResults.hrDataStartDate != Date.distantPast){
+                self.taskStartDateLabel.text = "\(TaskResults.hrStartDate)"
+                self.dataStartDateLabel.text = "\(TaskResults.hrDataStartDate)"
+            }
+            hrLineGraphChartView.reloadData()
+        }else{
+            self.taskStartDateLabel.text = "N/A"
+            self.dataStartDateLabel.text = "N/A"
+        }
+        self.refreshButton.layer.cornerRadius = 5
+        self.refreshButton.clipsToBounds = true
+        self.graphView.animate(withDuration: 0.5)
+    }
 }
