@@ -10,14 +10,7 @@ import ResearchKit
 
 class HeartRateDataSource: NSObject, ORKValueRangeGraphChartViewDataSource{
     
-    var plotPoints = [
-        ORKValueRange(value: 10),
-        ORKValueRange(value: 20),
-        ORKValueRange(value: 25),
-        ORKValueRange(),
-        ORKValueRange(value: 30),
-        ORKValueRange(value: 40),
-    ]
+    var plotPoints = [ORKValueRange]()
     
     func numberOfPlots(in graphChartView: ORKGraphChartView) -> Int {
         return 1

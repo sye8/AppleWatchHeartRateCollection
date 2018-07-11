@@ -31,7 +31,7 @@ struct ResultParser{
                     return
                 }
                 TaskResults.hrPlotPoints = [ORKValueRange]()
-                ResultParser.printHR(results: results)
+                //ResultParser.printHR(results: results)
                 for (index, entry) in results.enumerated(){
                     if(index > 0){
                         if(entry.startDate.timeIntervalSince(results[index-1].startDate) > 5){
