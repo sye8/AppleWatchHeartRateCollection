@@ -60,6 +60,7 @@ class HRLineGraphChartCell: UITableViewCell{
     @IBOutlet weak var taskStartDateLabel: UILabel!
     @IBOutlet weak var dataStartDateLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet var descriptionLabel: UILabel!
     
     @IBAction func refreshButtonHandler(_ sender: Any) {
         self.refresh()
@@ -74,11 +75,13 @@ class HRLineGraphChartCell: UITableViewCell{
             if(TaskResults.hrDataStartDate != Date.distantPast){
                 self.taskStartDateLabel.text = "\(TaskResults.hrStartDate)"
                 self.dataStartDateLabel.text = "\(TaskResults.hrDataStartDate)"
+                self.descriptionLabel.text = "Data will be cleared when app is closed"
             }
             hrLineGraphChartView.reloadData()
         }else{
             self.taskStartDateLabel.text = "N/A"
             self.dataStartDateLabel.text = "N/A"
+            self.descriptionLabel.text = "Tap \"Refresh\" to update chart"
         }
         self.refreshButton.layer.cornerRadius = 5
         self.refreshButton.clipsToBounds = true

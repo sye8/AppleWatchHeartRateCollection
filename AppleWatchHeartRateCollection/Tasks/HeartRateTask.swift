@@ -60,7 +60,7 @@ public var HeartRateTask: ORKOrderedTask {
     
     let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
     summaryStep.title = "Thank you!"
-    summaryStep.text = "<text>\nNow you can press \"Stop Recording\" on your watch\nYou can check the results in the results tab\nIf it shows no data, tap \"Refresh\" to update the results"
+    summaryStep.text = "<text>\nNow you can press \"Stop Recording\" on your watch.\nYou can check the results in the results tab.\n"
     steps += [summaryStep]
     
     return ORKOrderedTask(identifier: "HeartRateTask", steps: steps)

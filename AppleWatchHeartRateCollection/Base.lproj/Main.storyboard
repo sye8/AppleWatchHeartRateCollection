@@ -150,11 +150,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HRLineGraphChartCell" rowHeight="411" id="rhg-Wy-PGW" customClass="HRLineGraphChartCell" customModule="AppleWatchHeartRateCollection" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="411"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HRLineGraphChartCell" rowHeight="432" id="rhg-Wy-PGW" customClass="HRLineGraphChartCell" customModule="AppleWatchHeartRateCollection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="432"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhg-Wy-PGW" id="blH-sq-fAp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="410.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="431.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-zG-3mD">
@@ -195,7 +195,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAc-hZ-Dcs">
-                                            <rect key="frame" x="16" y="364" width="343" height="34"/>
+                                            <rect key="frame" x="16" y="364" width="343" height="39"/>
                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <state key="normal" title="Refresh">
@@ -205,11 +205,19 @@
                                                 <action selector="refreshButtonHandler:" destination="rhg-Wy-PGW" eventType="touchUpInside" id="JC4-lX-xXp"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Refresh&quot; to update chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clC-pg-3ia">
+                                            <rect key="frame" x="16" y="411" width="343" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="MT9-8R-owH" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="4Of-jl-eI3"/>
                                         <constraint firstItem="0ws-Mn-RjV" firstAttribute="top" secondItem="xsc-zG-3mD" secondAttribute="bottom" constant="8" id="6tg-KW-H3c"/>
                                         <constraint firstItem="VgQ-bG-SCt" firstAttribute="top" secondItem="HCc-hE-4IP" secondAttribute="bottom" constant="16" id="85E-Kb-pKE"/>
+                                        <constraint firstAttribute="bottom" secondItem="clC-pg-3ia" secondAttribute="bottom" constant="6" id="DYS-wZ-Phx"/>
+                                        <constraint firstItem="clC-pg-3ia" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="F9s-eb-0r0"/>
                                         <constraint firstItem="xsc-zG-3mD" firstAttribute="top" secondItem="blH-sq-fAp" secondAttribute="topMargin" id="G1O-C3-XpX"/>
                                         <constraint firstItem="MT9-8R-owH" firstAttribute="top" secondItem="0ws-Mn-RjV" secondAttribute="bottom" constant="4" id="IcY-1m-l2b"/>
                                         <constraint firstItem="VgQ-bG-SCt" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="Nfy-nQ-zQt"/>
@@ -221,6 +229,7 @@
                                         <constraint firstItem="HCc-hE-4IP" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="V4v-Rw-U3G"/>
                                         <constraint firstItem="VgQ-bG-SCt" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="XAP-Pl-QnF"/>
                                         <constraint firstItem="MT9-8R-owH" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="XIk-ia-cUh"/>
+                                        <constraint firstItem="clC-pg-3ia" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="YAb-YV-aKe"/>
                                         <constraint firstItem="qAc-hZ-Dcs" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="bZO-H6-a5a"/>
                                         <constraint firstItem="qAc-hZ-Dcs" firstAttribute="top" secondItem="BHU-cg-msc" secondAttribute="bottom" constant="16" id="cJO-Nm-kLx"/>
                                         <constraint firstItem="qAc-hZ-Dcs" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="fXy-7i-DSG"/>
@@ -230,13 +239,14 @@
                                         <constraint firstItem="0ws-Mn-RjV" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="n2K-ck-R1u"/>
                                         <constraint firstItem="HCc-hE-4IP" firstAttribute="top" secondItem="MT9-8R-owH" secondAttribute="bottom" constant="7.5" id="n4S-UO-K3c"/>
                                         <constraint firstItem="VgQ-bG-SCt" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="ocO-7w-kSw"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qAc-hZ-Dcs" secondAttribute="bottom" constant="2" id="qm8-W1-AKg"/>
+                                        <constraint firstItem="clC-pg-3ia" firstAttribute="top" secondItem="qAc-hZ-Dcs" secondAttribute="bottom" constant="8" id="pGz-Tv-1GJ"/>
                                         <constraint firstItem="VgQ-bG-SCt" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="vke-rK-E4j"/>
                                         <constraint firstItem="HCc-hE-4IP" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="xog-oc-NPk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dataStartDateLabel" destination="BHU-cg-msc" id="aTH-h2-Eb8"/>
+                                    <outlet property="descriptionLabel" destination="clC-pg-3ia" id="zus-SW-7FT"/>
                                     <outlet property="graphView" destination="0ws-Mn-RjV" id="rAO-hF-gYh"/>
                                     <outlet property="refreshButton" destination="qAc-hZ-Dcs" id="gnP-4S-ki1"/>
                                     <outlet property="taskStartDateLabel" destination="HCc-hE-4IP" id="Bv1-og-tha"/>
