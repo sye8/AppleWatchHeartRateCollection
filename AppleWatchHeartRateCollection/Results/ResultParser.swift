@@ -17,7 +17,7 @@ struct ResultParser{
         let healthStore = HKHealthStore()
         let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
-        let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
+        let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: true)]
         let hrQuery = HKSampleQuery(sampleType: hrType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: sortDescriptors){
             (query:HKSampleQuery, results:[HKSample]?, error: Error?) -> Void in
             
