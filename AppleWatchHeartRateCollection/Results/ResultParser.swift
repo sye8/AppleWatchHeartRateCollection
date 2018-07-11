@@ -92,4 +92,43 @@ struct ResultParser{
         }
     }
     
+    static func resultToDict(sample: HKQuantitySample) -> [String : String]{
+        var dict: [String:String] = [:]
+        dict["HR"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
+        dict["StartDate"] = "\(sample.startDate)"
+        dict["EndDate"] = "\(sample.endDate)"
+        dict["Source"] = "\(sample.sourceRevision)"
+        return dict
+    }
+    
+    static func resultViaHTTP(results: [HKQuantitySample]){
+        var toSend: [[String: String]] = []
+        for result in results{
+            toSend.append(resultToDict(sample: result))
+        }
+    }
+    
+    static func resultJSONviaHTTP(results: [[String: String]]){
+        var request = URLRequest(url: URL(string: "<IP Address>")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if JSONSerialization.isValidJSONObject(results){
+            do{
+                print("Try sending via HTTP")
+                let data = try JSONSerialization.data(withJSONObject: results, options: JSONSerialization.WritingOptions.prettyPrinted)
+                request.httpBody = data
+                let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                }
+                task.resume()
+            }catch{
+                print("Error while sending JSON via HTTP")
+            }
+        }else{
+            print("Invalid JSON Object")
+        }
+    }
 }
