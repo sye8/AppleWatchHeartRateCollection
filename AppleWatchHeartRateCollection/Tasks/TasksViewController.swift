@@ -118,9 +118,15 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
                 case "SurveyTask":
                     print(taskViewController.result)
                 case "HeartRateTask":
-                    if let results = taskViewController.result.results, results.count > 2, let hrResult = results[5] as? ORKStepResult{
+                    if let results = taskViewController.result.results, results.count > 2{
+                        if let baselineResult = results[3] as? ORKStepResult{
+                            TaskResults.baselineStartDate = baselineResult.startDate
+                            TaskResults.baselineEndDate = baselineResult.endDate
+                        }
+                        if let hrResult = results[5] as? ORKStepResult{
                             TaskResults.hrStartDate = hrResult.startDate
                             TaskResults.hrEndDate = hrResult.endDate
+                        }
                     }
                 default:
                     print("Unhandled Case")

@@ -12,6 +12,9 @@ import ResearchKit
 
 struct TaskResults{
     static var surveyResult = ORKTaskResult()
+    static var baselineStartDate = Date.distantPast
+    static var baselineEndDate = Date.distantFuture
+    static var baselineAvg: Double = 0.0
     static var hrStartDate = Date.distantPast
     static var hrEndDate = Date.distantFuture
     static var hrDataStartDate = Date.distantPast
@@ -68,6 +71,7 @@ class HRLineGraphChartCell: UITableViewCell{
     
     func refresh(){
         if(TaskResults.hrStartDate != Date.distantPast && TaskResults.hrEndDate != Date.distantFuture){
+            ResultParser.getHKBaseline(startDate: TaskResults.baselineStartDate, endDate: TaskResults.baselineEndDate)
             ResultParser.getHKData(startDate: TaskResults.hrStartDate, endDate: TaskResults.hrEndDate)
             let hrLineGraphChartView = self.graphView as! ORKLineGraphChartView
             let hrDataSource = hrLineGraphChartView.dataSource as! HeartRateDataSource
@@ -76,6 +80,7 @@ class HRLineGraphChartCell: UITableViewCell{
                 self.taskStartDateLabel.text = "\(TaskResults.hrStartDate)"
                 self.dataStartDateLabel.text = "\(TaskResults.hrDataStartDate)"
                 self.descriptionLabel.text = "Data will be cleared when app is closed"
+                print("Baseline: \(TaskResults.baselineAvg)")
             }
             hrLineGraphChartView.reloadData()
         }else{

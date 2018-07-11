@@ -49,6 +49,37 @@ struct ResultParser{
         healthStore.execute(hrQuery)
     }
     
+    static func getHKBaseline(startDate: Date, endDate: Date){
+        let healthStore = HKHealthStore()
+        let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: true)]
+        let baselineQuery = HKSampleQuery(sampleType: hrType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: sortDescriptors){
+            (query:HKSampleQuery, results:[HKSample]?, error: Error?) -> Void in
+            
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    print("Error: \(String(describing: error))")
+                    return
+                }
+                guard let results = results as? [HKQuantitySample] else {
+                    print("Data conversion error")
+                    return
+                }
+                if results.count == 0 {
+                    print("Empty Results")
+                    return
+                }
+                var baselineSum: Double = 0.0
+                for result in results{
+                    baselineSum += result.quantity.doubleValue(for: HKUnit(from: "count/min"))
+                }
+                TaskResults.baselineAvg = baselineSum / Double(results.count)
+            }
+        }
+        healthStore.execute(baselineQuery)
+    }
+    
     static func printHR(results: [HKSample]?){
         guard let results = results as? [HKQuantitySample] else { return }
         print("Number of data points: \(results.count)")
