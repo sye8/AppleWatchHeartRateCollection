@@ -150,39 +150,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HRLineGraphChartCell" rowHeight="258" id="rhg-Wy-PGW" customClass="HRLineGraphChartCell" customModule="AppleWatchHeartRateCollection" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="258"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HRLineGraphChartCell" rowHeight="450" id="rhg-Wy-PGW" customClass="HRLineGraphChartCell" customModule="AppleWatchHeartRateCollection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="450"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhg-Wy-PGW" id="blH-sq-fAp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="449.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-zG-3mD">
-                                            <rect key="frame" x="16" y="11" width="89" height="28"/>
+                                            <rect key="frame" x="16" y="11" width="89" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Mn-RjV" customClass="ORKLineGraphChartView">
-                                            <rect key="frame" x="16" y="47" width="343" height="200"/>
+                                        <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Mn-RjV" customClass="ORKLineGraphChartView">
+                                            <rect key="frame" x="16" y="40.5" width="343" height="200"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="200" id="4Og-Ft-LiE"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Start Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-8R-owH">
+                                            <rect key="frame" x="16" y="248.5" width="343" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-bG-SCt">
+                                            <rect key="frame" x="16" y="308" width="343" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCc-hE-4IP">
+                                            <rect key="frame" x="16" y="274" width="343" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHU-cg-msc">
+                                            <rect key="frame" x="16" y="334" width="343" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="MT9-8R-owH" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="4Of-jl-eI3"/>
                                         <constraint firstItem="0ws-Mn-RjV" firstAttribute="top" secondItem="xsc-zG-3mD" secondAttribute="bottom" constant="8" id="6tg-KW-H3c"/>
+                                        <constraint firstItem="BHU-cg-msc" firstAttribute="top" secondItem="VgQ-bG-SCt" secondAttribute="bottom" constant="8" id="9EG-yB-YDe"/>
+                                        <constraint firstItem="MT9-8R-owH" firstAttribute="top" secondItem="0ws-Mn-RjV" secondAttribute="bottom" constant="8" id="9We-aH-ZM2"/>
                                         <constraint firstItem="xsc-zG-3mD" firstAttribute="top" secondItem="blH-sq-fAp" secondAttribute="topMargin" id="G1O-C3-XpX"/>
+                                        <constraint firstItem="HCc-hE-4IP" firstAttribute="top" secondItem="MT9-8R-owH" secondAttribute="bottom" constant="7.5" id="JEV-zz-jES"/>
+                                        <constraint firstItem="VgQ-bG-SCt" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="Nfy-nQ-zQt"/>
                                         <constraint firstItem="xsc-zG-3mD" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="OXS-8z-e5n"/>
+                                        <constraint firstItem="HCc-hE-4IP" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="Ott-wH-zws"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xsc-zG-3mD" secondAttribute="trailingMargin" id="Rkb-N1-zby"/>
+                                        <constraint firstItem="BHU-cg-msc" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="TKm-8Z-qMa"/>
+                                        <constraint firstItem="BHU-cg-msc" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="Tda-4d-Bd8"/>
+                                        <constraint firstItem="HCc-hE-4IP" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="V4v-Rw-U3G"/>
+                                        <constraint firstItem="VgQ-bG-SCt" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="XAP-Pl-QnF"/>
+                                        <constraint firstItem="MT9-8R-owH" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="XIk-ia-cUh"/>
+                                        <constraint firstItem="VgQ-bG-SCt" firstAttribute="top" secondItem="HCc-hE-4IP" secondAttribute="bottom" constant="16" id="dyC-my-Hju"/>
                                         <constraint firstItem="0ws-Mn-RjV" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="jKc-P8-fcb"/>
+                                        <constraint firstItem="HCc-hE-4IP" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="jsZ-vk-2ea"/>
                                         <constraint firstItem="0ws-Mn-RjV" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="n2K-ck-R1u"/>
-                                        <constraint firstItem="0ws-Mn-RjV" firstAttribute="bottom" secondItem="blH-sq-fAp" secondAttribute="bottomMargin" id="oTL-Ux-KVJ"/>
+                                        <constraint firstItem="VgQ-bG-SCt" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="ocO-7w-kSw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BHU-cg-msc" secondAttribute="bottom" constant="87" id="uBw-G5-CEk"/>
+                                        <constraint firstItem="VgQ-bG-SCt" firstAttribute="trailing" secondItem="blH-sq-fAp" secondAttribute="trailingMargin" id="vke-rK-E4j"/>
+                                        <constraint firstItem="HCc-hE-4IP" firstAttribute="leading" secondItem="blH-sq-fAp" secondAttribute="leadingMargin" id="xog-oc-NPk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dataStartDateLabel" destination="BHU-cg-msc" id="aTH-h2-Eb8"/>
                                     <outlet property="graphView" destination="0ws-Mn-RjV" id="rAO-hF-gYh"/>
+                                    <outlet property="taskStartDateLabel" destination="HCc-hE-4IP" id="Bv1-og-tha"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

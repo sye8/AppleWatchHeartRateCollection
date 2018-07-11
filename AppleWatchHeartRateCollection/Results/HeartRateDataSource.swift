@@ -24,10 +24,6 @@ class HeartRateDataSource: NSObject, ORKValueRangeGraphChartViewDataSource{
         return plotPoints.count
     }
     
-    func graphChartView(_ graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
-        return "\(pointIndex + 1)"
-    }
-    
     func updatePlotPoints(newPlotPoints: [ORKValueRange]){
         self.plotPoints = newPlotPoints
     }

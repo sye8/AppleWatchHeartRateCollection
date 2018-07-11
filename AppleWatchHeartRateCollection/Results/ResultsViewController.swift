@@ -14,6 +14,7 @@ struct TaskResults{
     static var surveyResult = ORKTaskResult()
     static var hrStartDate = Date.distantPast
     static var hrEndDate = Date.distantFuture
+    static var hrDataStartDate = Date.distantPast
     static var hrPlotPoints = [ORKValueRange]()
 }
 
@@ -53,7 +54,14 @@ class ResultsViewController: UITableViewController{
             let hrLineGraphChartView = hrLineGraphChartCell.graphView as! ORKLineGraphChartView
             let hrDataSource = hrLineGraphChartView.dataSource as! HeartRateDataSource
             hrDataSource.updatePlotPoints(newPlotPoints: TaskResults.hrPlotPoints)
+            if(TaskResults.hrDataStartDate != Date.distantPast){
+                hrLineGraphChartCell.taskStartDateLabel.text = "\(TaskResults.hrStartDate)"
+                hrLineGraphChartCell.dataStartDateLabel.text = "\(TaskResults.hrDataStartDate)"
+            }
             hrLineGraphChartView.reloadData()
+        }else{
+            hrLineGraphChartCell.taskStartDateLabel.text = "N/A"
+            hrLineGraphChartCell.dataStartDateLabel.text = "N/A"
         }
         self.tableView.allowsSelection = false
         hrLineGraphChartCell.graphView.animate(withDuration: 0.5)
@@ -63,4 +71,6 @@ class ResultsViewController: UITableViewController{
 
 class HRLineGraphChartCell: UITableViewCell{
     @IBOutlet weak var graphView: ORKGraphChartView!
+    @IBOutlet weak var taskStartDateLabel: UILabel!
+    @IBOutlet weak var dataStartDateLabel: UILabel!
 }

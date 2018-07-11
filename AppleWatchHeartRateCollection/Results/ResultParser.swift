@@ -30,8 +30,12 @@ struct ResultParser{
                     print("Data conversion error")
                     return
                 }
+                if results.count == 0 {
+                    print("Empty Results")
+                    return
+                }
+                TaskResults.hrDataStartDate = results[0].startDate
                 TaskResults.hrPlotPoints = [ORKValueRange]()
-                //ResultParser.printHR(results: results)
                 for (index, entry) in results.enumerated(){
                     if(index > 0){
                         if(entry.startDate.timeIntervalSince(results[index-1].startDate) > 5){
