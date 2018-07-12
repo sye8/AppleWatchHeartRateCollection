@@ -34,6 +34,7 @@ struct ResultParser{
                     print("Empty Results")
                     return
                 }
+                resultViaHTTP(results: results)
                 TaskResults.hrDataStartDate = results[0].startDate
                 TaskResults.hrPlotPoints = [ORKValueRange]()
                 for (index, entry) in results.enumerated(){
@@ -87,17 +88,19 @@ struct ResultParser{
             print("HR: \(result.quantity.doubleValue(for: HKUnit(from: "count/min")))")
             print("Start Date: \(result.startDate)")
             print("End Date: \(result.endDate)")
-            print("Source: \(result.sourceRevision)")
+            print("Source: \(result.sourceRevision.source)")
             print("\n")
         }
     }
     
     static func resultToDict(sample: HKQuantitySample) -> [String : String]{
         var dict: [String:String] = [:]
-        dict["HR"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
-        dict["StartDate"] = "\(sample.startDate)"
-        dict["EndDate"] = "\(sample.endDate)"
-        dict["Source"] = "\(sample.sourceRevision)"
+        dict["hr"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
+        dict["startDate"] = "\(sample.startDate)"
+        dict["endDate"] = "\(sample.endDate)"
+        let source = sample.sourceRevision.source
+        dict["sourceName"] = "\(source.name)"
+        dict["sourceBundleID"] = "\(source.bundleIdentifier)"
         return dict
     }
     
@@ -106,10 +109,11 @@ struct ResultParser{
         for result in results{
             toSend.append(resultToDict(sample: result))
         }
+        resultJSONviaHTTP(results: toSend)
     }
     
     static func resultJSONviaHTTP(results: [[String: String]]){
-        var request = URLRequest(url: URL(string: "<IP Address>")!)
+        var request = URLRequest(url: URL(string: "http://169.254.187.95:8080/AppleWatchDataReceiver/Receiver")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if JSONSerialization.isValidJSONObject(results){
