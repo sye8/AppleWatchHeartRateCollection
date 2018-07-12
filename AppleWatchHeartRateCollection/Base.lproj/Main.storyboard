@@ -93,8 +93,16 @@
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonTappedWithSender:" destination="81z-e2-JjQ" eventType="touchUpInside" id="TaO-Xi-CiJ"/>
+                                    <action selector="withdrawButtonTappedWithSender:" destination="81z-e2-JjQ" eventType="touchUpInside" id="Htc-vv-cbE"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="returnToConsent" id="O9z-G6-jbh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ec-Gc-xdI">
+                                <rect key="frame" x="30" y="110" width="177" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Consent Document"/>
+                                <connections>
+                                    <action selector="consentDocButtonHandler:" destination="81z-e2-JjQ" eventType="touchUpInside" id="Dgg-U2-vTx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -102,7 +110,10 @@
                         <constraints>
                             <constraint firstItem="til-ZS-mny" firstAttribute="leading" secondItem="5uN-PM-hQC" secondAttribute="leading" constant="30" id="39f-M3-blc"/>
                             <constraint firstItem="5uN-PM-hQC" firstAttribute="bottom" secondItem="til-ZS-mny" secondAttribute="bottom" constant="80" id="ANZ-AU-3yG"/>
+                            <constraint firstItem="0ec-Gc-xdI" firstAttribute="top" secondItem="5uN-PM-hQC" secondAttribute="top" constant="90" id="TaF-Lt-QU2"/>
+                            <constraint firstItem="0ec-Gc-xdI" firstAttribute="leading" secondItem="5uN-PM-hQC" secondAttribute="leading" constant="30" id="lZX-KZ-FZx"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="til-ZS-mny" secondAttribute="trailing" constant="20" symbolic="YES" id="oOV-8M-lAV"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0ec-Gc-xdI" secondAttribute="trailing" constant="20" symbolic="YES" id="y4M-YD-50s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5uN-PM-hQC"/>
                     </view>
@@ -160,7 +171,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-zG-3mD">
                                             <rect key="frame" x="16" y="11" width="89" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Mn-RjV" customClass="ORKLineGraphChartView">
@@ -173,13 +184,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Start Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-8R-owH">
                                             <rect key="frame" x="16" y="244.5" width="343" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-bG-SCt">
                                             <rect key="frame" x="16" y="304" width="343" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCc-hE-4IP">
@@ -196,7 +207,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAc-hZ-Dcs">
                                             <rect key="frame" x="16" y="364" width="343" height="39"/>
-                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <state key="normal" title="Refresh">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
