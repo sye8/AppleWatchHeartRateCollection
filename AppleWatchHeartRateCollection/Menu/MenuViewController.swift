@@ -32,6 +32,7 @@ class MenuViewController: UIViewController {
         var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last
         docURL = docURL?.appendingPathComponent("consent.pdf")
         let PDFViewerStep = ORKPDFViewerStep.init(identifier: "ConsentPDFViewer", pdfURL: docURL)
+        PDFViewerStep.title = "Consent"
         return ORKOrderedTask(identifier: String("ConsentPDF"), steps: [PDFViewerStep])
     }
     

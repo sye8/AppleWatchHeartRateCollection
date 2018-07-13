@@ -14,7 +14,6 @@ struct TaskResults{
     static var surveyResult = ORKTaskResult()
     static var baselineStartDate = Date.distantPast
     static var baselineEndDate = Date.distantFuture
-    static var baselineAvg: Double = 0.0
     static var hrStartDate = Date.distantPast
     static var hrEndDate = Date.distantFuture
     static var hrDataStartDate = Date.distantPast
