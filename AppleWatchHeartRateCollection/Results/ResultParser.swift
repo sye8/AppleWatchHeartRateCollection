@@ -74,18 +74,6 @@ struct ResultParser{
         healthStore.execute(hrQuery)
     }
     
-    static func printHR(results: [HKSample]?){
-        guard let results = results as? [HKQuantitySample] else { return }
-        print("Number of data points: \(results.count)")
-        for result in results{
-            print("HR: \(result.quantity.doubleValue(for: HKUnit(from: "count/min")))")
-            print("Start Date: \(result.startDate)")
-            print("End Date: \(result.endDate)")
-            print("Source: \(result.sourceRevision.source)")
-            print("\n")
-        }
-    }
-    
     static func resultToDict(sample: HKQuantitySample) -> [String : String]{
         var dict: [String:String] = [:]
         dict["hr"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
