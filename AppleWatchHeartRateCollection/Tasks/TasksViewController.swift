@@ -116,7 +116,7 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
             //Handle results in results view controller
             switch taskViewController.result.identifier{
                 case "SurveyTask":
-                    print(taskViewController.result)
+                    ResultParser.getSurveyResults(result: taskViewController.result)
                 case "HeartRateTask":
                     if let results = taskViewController.result.results, results.count > 2{
                         if let baselineResult = results[3] as? ORKStepResult{

@@ -21,7 +21,7 @@ public var SurveyTask: ORKOrderedTask {
     //Short text Input Question
     let shortAnswerFormat = ORKTextAnswerFormat(maximumLength: 32)
     shortAnswerFormat.multipleLines = false
-    let shortAnswerStepTitle = "Single Line, Short Answer, 36 chars"
+    let shortAnswerStepTitle = "Single Line, Short Answer, 32 chars"
     let shortAnswerStep = ORKQuestionStep(identifier: "QuestionStep", title: shortAnswerStepTitle, answer: shortAnswerFormat)
     steps += [shortAnswerStep]
     
@@ -33,7 +33,7 @@ public var SurveyTask: ORKOrderedTask {
         ORKTextChoice(text: "Choice 3", value: 2 as NSCoding & NSCopying & NSObjectProtocol)
     ]
     let textChoiceAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices)
-    let textChoiceStep = ORKQuestionStep(identifier: "TextChoiceQuestionStep", title: textChoiceStepTitle, answer: textChoiceAnswerFormat)
+    let textChoiceStep = ORKQuestionStep(identifier: "TextChoiceStep", title: textChoiceStepTitle, answer: textChoiceAnswerFormat)
     steps += [textChoiceStep]
     
     //Image Choice Question
@@ -48,7 +48,7 @@ public var SurveyTask: ORKOrderedTask {
         return ORKImageChoice(normalImage: $0.0, selectedImage: nil, text: $0.1, value: $0.1 as NSCoding & NSCopying & NSObjectProtocol)
     }
     let imageChoiceAnswerFormat: ORKImageChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: imageChoices)
-    let imageChoiceQuestionStep = ORKQuestionStep(identifier: "ImageChoiceQuestionStep", title: imageChoiceQuestionStepTitle, answer: imageChoiceAnswerFormat)
+    let imageChoiceQuestionStep = ORKQuestionStep(identifier: "ImageChoiceStep", title: imageChoiceQuestionStepTitle, answer: imageChoiceAnswerFormat)
     steps += [imageChoiceQuestionStep]
     
     //Other Tasks

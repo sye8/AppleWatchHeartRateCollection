@@ -13,6 +13,30 @@ import ResearchKit
 
 struct ResultParser{
     
+    static func getSurveyResults(result: ORKTaskResult){
+        //Question Step
+        if let questionStepResult = result.stepResult(forStepIdentifier: "QuestionStep"){
+            let stepResults = questionStepResult.results
+            let questionResult = stepResults![0] as! ORKTextQuestionResult
+            let answer = questionResult.textAnswer
+            print("Short Question Answer: \(answer)")
+        }
+        //Text Choice Step
+        if let textChoiceStepResult = result.stepResult(forStepIdentifier: "TextChoiceStep"){
+            let stepResults = textChoiceStepResult.results
+            let questionResult = stepResults![0] as! ORKChoiceQuestionResult
+            let answer = questionResult.choiceAnswers
+            print("Text Choice Answer: \(answer)")
+        }
+        //Image Choice Step
+        if let imageChoiceStepResult = result.stepResult(forStepIdentifier: "ImageChoiceStep"){
+            let stepResults = imageChoiceStepResult.results
+            let questionResult = stepResults![0] as! ORKChoiceQuestionResult
+            let answer = questionResult.choiceAnswers
+            print("Image Choice Answer: \(answer)")
+        }
+    }
+    
     static func getHKData(startDate: Date, endDate: Date){
         let healthStore = HKHealthStore()
         let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
