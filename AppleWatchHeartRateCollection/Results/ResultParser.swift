@@ -79,14 +79,13 @@ struct ResultParser{
         dict["hr"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
         dict["startDate"] = "\(sample.startDate)"
         dict["endDate"] = "\(sample.endDate)"
-        let source = sample.sourceRevision.source
-        dict["sourceName"] = "\(source.name)"
-        dict["sourceBundleID"] = "\(source.bundleIdentifier)"
+        dict["id"] = "\(TaskResults.id)"
         return dict
     }
     
     static func resultViaHTTP(results: [HKQuantitySample]){
         var toSend: [[String: String]] = []
+        toSend.append(["id" : TaskResults.id])
         for result in results{
             toSend.append(resultToDict(sample: result))
         }
@@ -94,12 +93,11 @@ struct ResultParser{
     }
     
     static func resultJSONviaHTTP(results: [[String: String]]){
-        var request = URLRequest(url: URL(string: "http://169.254.187.95:8080/AppleWatchDataReceiver/Receiver")!)
+        var request = URLRequest(url: URL(string: "http://172:24.1.1:8080/AppleWatchDataReceiver/Receiver")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if JSONSerialization.isValidJSONObject(results){
             do{
-                print("Try sending via HTTP")
                 let data = try JSONSerialization.data(withJSONObject: results, options: JSONSerialization.WritingOptions.prettyPrinted)
                 request.httpBody = data
                 let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
