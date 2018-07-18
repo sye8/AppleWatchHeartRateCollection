@@ -11,7 +11,7 @@ import HealthKit
 
 import ResearchKit
 
-struct ResultParser{
+class ResultParser: NSObject, URLSessionDelegate{
     
     static func getSurveyResults(result: ORKTaskResult){
         //Question Step
@@ -58,7 +58,8 @@ struct ResultParser{
                     print("Empty Results")
                     return
                 }
-                resultViaHTTP(results: results)
+                let rp = ResultParser()
+                rp.resultViaHTTP(results: results)
                 TaskResults.hrDataStartDate = results[0].startDate
                 TaskResults.hrPlotPoints = [ORKValueRange]()
                 for (index, entry) in results.enumerated(){
@@ -74,7 +75,7 @@ struct ResultParser{
         healthStore.execute(hrQuery)
     }
     
-    static func resultToDict(sample: HKQuantitySample) -> [String : String]{
+    func resultToDict(sample: HKQuantitySample) -> [String : String]{
         var dict: [String:String] = [:]
         dict["hr"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
         dict["startDate"] = "\(sample.startDate)"
@@ -82,7 +83,7 @@ struct ResultParser{
         return dict
     }
     
-    static func resultViaHTTP(results: [HKQuantitySample]){
+    func resultViaHTTP(results: [HKQuantitySample]){
         var toSend: [[String: String]] = []
         toSend.append(["id" : TaskResults.id])
         for result in results{
@@ -91,15 +92,17 @@ struct ResultParser{
         resultJSONviaHTTP(results: toSend)
     }
     
-    static func resultJSONviaHTTP(results: [[String: String]]){
-        var request = URLRequest(url: URL(string: "http://172:24.1.1:8080/AppleWatchDataReceiver/Receiver")!)
+    func resultJSONviaHTTP(results: [[String: String]]){
+        
+        var request = URLRequest(url: URL(string: "https://172.24.1.1:8443/AppleWatchDataReceiver/Receiver")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if JSONSerialization.isValidJSONObject(results){
             do{
                 let data = try JSONSerialization.data(withJSONObject: results, options: JSONSerialization.WritingOptions.prettyPrinted)
                 request.httpBody = data
-                let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+                let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
+                let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
                     if error != nil{
                         print(error)
                         return
@@ -113,4 +116,13 @@ struct ResultParser{
             print("Invalid JSON Object")
         }
     }
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        if challenge.protectionSpace.host == "172.24.1.1" {
+            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
+    }
+    
 }
