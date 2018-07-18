@@ -79,7 +79,6 @@ struct ResultParser{
         dict["hr"] = "\(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))"
         dict["startDate"] = "\(sample.startDate)"
         dict["endDate"] = "\(sample.endDate)"
-        dict["id"] = "\(TaskResults.id)"
         return dict
     }
     
