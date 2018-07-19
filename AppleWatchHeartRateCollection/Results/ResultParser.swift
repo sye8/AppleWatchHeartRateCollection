@@ -89,6 +89,10 @@ class ResultParser: NSObject, URLSessionDelegate{
         if isBaseline {
             id = id + "_Baseline"
         }
+        if let descriptionResult = TaskResults.textFieldResult{
+            let description = descriptionResult.results![0] as! ORKTextQuestionResult
+            id = id + " " + description.textAnswer!
+        }
         toSend.append(["id" : id])
         for result in results{
             toSend.append(resultToDict(sample: result))

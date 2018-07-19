@@ -127,6 +127,9 @@ extension TasksViewController : ORKTaskViewControllerDelegate {
                             TaskResults.hrStartDate = hrResult.startDate
                             TaskResults.hrEndDate = hrResult.endDate
                         }
+                        if let textFieldResult = results[7] as? ORKStepResult{
+                            TaskResults.textFieldResult = textFieldResult
+                        }
                     }
                 default:
                     print("Unhandled Case")

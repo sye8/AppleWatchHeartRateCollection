@@ -18,6 +18,7 @@ struct TaskResults{
     static var hrEndDate = Date.distantFuture
     static var hrDataStartDate = Date.distantPast
     static var hrPlotPoints = [ORKValueRange]()
+    static var textFieldResult: ORKStepResult?
     static let id = UUID().uuidString
 }
 

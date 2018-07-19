@@ -58,9 +58,19 @@ public var HeartRateTask: ORKOrderedTask {
     heartrateStep.text = "Please <do sth> for 1 minute."
     steps += [heartrateStep]
     
+    let endPromptStep = ORKActiveStep(identifier: "EndPrompt")
+    endPromptStep.title = "TV + Heart Rate"
+    endPromptStep.text = "Now you can press \"Stop Recording\" on your watch."
+    steps += [endPromptStep]
+    
+    let textFieldFormat = ORKTextAnswerFormat(maximumLength: 128)
+    textFieldFormat.multipleLines = true
+    let textFieldStep = ORKQuestionStep(identifier: "TextField", title: "What did you watch during the task?", answer: textFieldFormat)
+    steps += [textFieldStep]
+    
     let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
     summaryStep.title = "Thank you!"
-    summaryStep.text = "<text>\nNow you can press \"Stop Recording\" on your watch.\nYou can check the results in the results tab.\n"
+    summaryStep.text = "<text>\nYou can check the results in the results tab.\n"
     steps += [summaryStep]
     
     return ORKOrderedTask(identifier: "HeartRateTask", steps: steps)
