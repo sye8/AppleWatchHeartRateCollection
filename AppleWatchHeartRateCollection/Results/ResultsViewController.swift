@@ -71,7 +71,8 @@ class HRLineGraphChartCell: UITableViewCell{
     
     func refresh(){
         if(TaskResults.hrStartDate != Date.distantPast && TaskResults.hrEndDate != Date.distantFuture){
-            ResultParser.getHKData(startDate: TaskResults.hrStartDate, endDate: TaskResults.hrEndDate)
+            ResultParser.getHKData(startDate: TaskResults.baselineStartDate, endDate: TaskResults.baselineEndDate, isBaseline: true)
+            ResultParser.getHKData(startDate: TaskResults.hrStartDate, endDate: TaskResults.hrEndDate, isBaseline: false)
             let hrLineGraphChartView = self.graphView as! ORKLineGraphChartView
             let hrDataSource = hrLineGraphChartView.dataSource as! HeartRateDataSource
             hrDataSource.updatePlotPoints(newPlotPoints: TaskResults.hrPlotPoints)

@@ -37,7 +37,7 @@ class ResultParser: NSObject, URLSessionDelegate{
         }
     }
     
-    static func getHKData(startDate: Date, endDate: Date){
+    static func getHKData(startDate: Date, endDate: Date, isBaseline: Bool){
         let healthStore = HKHealthStore()
         let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
@@ -59,7 +59,7 @@ class ResultParser: NSObject, URLSessionDelegate{
                     return
                 }
                 let rp = ResultParser()
-                rp.resultViaHTTP(results: results)
+                rp.resultViaHTTP(results: results, isBaseline: isBaseline)
                 TaskResults.hrDataStartDate = results[0].startDate
                 TaskResults.hrPlotPoints = [ORKValueRange]()
                 for (index, entry) in results.enumerated(){
@@ -83,9 +83,13 @@ class ResultParser: NSObject, URLSessionDelegate{
         return dict
     }
     
-    func resultViaHTTP(results: [HKQuantitySample]){
+    func resultViaHTTP(results: [HKQuantitySample], isBaseline: Bool){
         var toSend: [[String: String]] = []
-        toSend.append(["id" : TaskResults.id])
+        var id = TaskResults.id
+        if isBaseline {
+            id = id + "_Baseline"
+        }
+        toSend.append(["id" : id])
         for result in results{
             toSend.append(resultToDict(sample: result))
         }
