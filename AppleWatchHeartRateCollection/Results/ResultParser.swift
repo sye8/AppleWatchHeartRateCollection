@@ -14,27 +14,8 @@ import ResearchKit
 class ResultParser: NSObject, URLSessionDelegate{
     
     static func getSurveyResults(result: ORKTaskResult){
-        //Question Step
-        if let questionStepResult = result.stepResult(forStepIdentifier: "QuestionStep"){
-            let stepResults = questionStepResult.results
-            let questionResult = stepResults![0] as! ORKTextQuestionResult
-            let answer = questionResult.textAnswer
-            print("Short Question Answer: \(answer)")
-        }
-        //Text Choice Step
-        if let textChoiceStepResult = result.stepResult(forStepIdentifier: "TextChoiceStep"){
-            let stepResults = textChoiceStepResult.results
-            let questionResult = stepResults![0] as! ORKChoiceQuestionResult
-            let answer = questionResult.choiceAnswers
-            print("Text Choice Answer: \(answer)")
-        }
-        //Image Choice Step
-        if let imageChoiceStepResult = result.stepResult(forStepIdentifier: "ImageChoiceStep"){
-            let stepResults = imageChoiceStepResult.results
-            let questionResult = stepResults![0] as! ORKChoiceQuestionResult
-            let answer = questionResult.choiceAnswers
-            print("Image Choice Answer: \(answer)")
-        }
+        let rp = ResultParser()
+        rp.surveyViaHTTP(result: result)
     }
     
     static func getHKData(startDate: Date, endDate: Date, isBaseline: Bool){
@@ -73,6 +54,59 @@ class ResultParser: NSObject, URLSessionDelegate{
             }
         }
         healthStore.execute(hrQuery)
+    }
+    
+    func surveyViaHTTP(result: ORKTaskResult){
+        var dict: [String: String] = [:]
+        dict["id"] = TaskResults.id
+        if let questionStepResult = result.stepResult(forStepIdentifier: "QuestionStep"){
+            let questionResult = questionStepResult.results![0] as! ORKTextQuestionResult
+            dict["shortQuestionAnswer"] = questionResult.textAnswer
+        }else{
+            dict["shortQuestionAnswer"] = "null"
+        }
+        if let textChoiceStepResult = result.stepResult(forStepIdentifier: "TextChoiceStep"){
+            let questionResult = textChoiceStepResult.results![0] as! ORKChoiceQuestionResult
+            if let ans = questionResult.choiceAnswers{
+                dict["textChoiceAnswer"] = ans.description
+            }else{
+                dict["textChoiceAnswer"] = "null"
+            }
+        }else{
+            dict["textChoiceAnswer"] = "null"
+        }
+        if let imageChoiceStepResult = result.stepResult(forStepIdentifier: "ImageChoiceStep"){
+            let questionResult = imageChoiceStepResult.results![0] as! ORKChoiceQuestionResult
+            if let ans = questionResult.choiceAnswers{
+                dict["imageChoiceAnswer"] = ans.description
+            }else{
+                dict["imageChoiceAnswer"] = "null"
+            }
+        }else{
+            dict["imageChoiceAnswer"] = "null"
+        }
+        
+        var request = URLRequest(url: URL(string: "https://172.24.1.1:8443/AppleWatchDataReceiver/Survey")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if JSONSerialization.isValidJSONObject(dict){
+            do{
+                let data = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
+                request.httpBody = data
+                let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
+                let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                }
+                task.resume()
+            }catch{
+                print("Error while sending JSON via HTTP")
+            }
+        }else{
+            print("Invalid JSON Object")
+        }
     }
     
     func resultToDict(sample: HKQuantitySample) -> [String : String]{
