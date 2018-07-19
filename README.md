@@ -1,5 +1,7 @@
-# AppleWatchHeartRateCollection (Work In Progress)
+# AppleWatchHeartRateCollection
 Use ResearchKit and HealthKit to collect Apple Watch heart rate data on iOS devices
+
+Data is also sent to a local testing server via HTTP with SSL (self-signed certificate)
 
 ## OS Versions and Dependencies
 - Xcode >= 8.0 (well you also need macOS for that)
