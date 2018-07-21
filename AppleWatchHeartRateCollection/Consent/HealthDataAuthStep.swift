@@ -42,7 +42,7 @@ import HealthKit
 
 import ResearchKit
 
-class HealthDataStep: ORKInstructionStep {
+class HealthDataStep: ORKActiveStep {
     
     let healthKitStore = HKHealthStore()
     

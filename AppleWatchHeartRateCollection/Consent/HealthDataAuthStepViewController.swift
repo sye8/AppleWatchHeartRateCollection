@@ -42,7 +42,7 @@ import HealthKit
 
 import ResearchKit
 
-class HealthDataStepViewController: ORKInstructionStepViewController {
+class HealthDataStepViewController: ORKActiveStepViewController {
     
     var healthDataStep: HealthDataStep? {
         return step as? HealthDataStep
