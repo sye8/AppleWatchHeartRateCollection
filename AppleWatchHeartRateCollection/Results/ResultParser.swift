@@ -145,7 +145,7 @@ class ResultParser: NSObject, URLSessionDelegate{
                 request.httpBody = data
                 let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
                 let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-                    if error != nil{
+                    if let error = error{
                         print(error)
                         return
                     }
